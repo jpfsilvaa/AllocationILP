@@ -1,4 +1,4 @@
-\ Model Cloudlet Resource Allocation
+\ Model Cloudlet-VM Allocation
 \ LP format - for model browsing. Use MPS format to capture full model detail.
 Minimize
   allocate[c0,v1] + allocate[c0,v2] + allocate[c0,v3] + allocate[c0,v4]

@@ -18,7 +18,7 @@ VMs, v_storage, v_CPU, v_RAM, v_delayThreshold = multidict({
     'v5': [190, 2500, 520, 5000],
 })
 
-m = Model('Cloudlet Resource Allocation')
+m = Model('Cloudlet-VM Allocation')
 
 # decision variables
 x = m.addVars(cloudlets, VMs, vtype=GRB.BINARY, name="allocate")
@@ -43,7 +43,10 @@ for n in cloudlets:
 
 # allocation constraint: a VM must be allocated (even in cloud), 
 # but only in one place (i.e., a VM must not be allocated in two places)
-allocationConstr = m.addConstrs((x.sum('*', v) == 1 for v in VMs), 'allocate')
+for v in VMs:
+    m.addConstr((
+        quicksum(x[n,v] for n in cloudlets) == 1
+    ), name='allocate[%s]'%v)
 
 # objective function
 m.setObjective((x.sum(cloudlets[0], '*')), GRB.MINIMIZE)
