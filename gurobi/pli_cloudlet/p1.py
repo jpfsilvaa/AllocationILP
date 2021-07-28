@@ -50,7 +50,7 @@ for v in VMs:
 
 # objective function
 m.setObjective((x.sum(cloudlets[0], '*')), GRB.MINIMIZE)
-m.write('gurobi/pli_cloudlet/RA.lp')
+m.write('gurobi/pli_cloudlet/p1_formulation.lp')
 
 # Run the optimization engine
 m.optimize()
