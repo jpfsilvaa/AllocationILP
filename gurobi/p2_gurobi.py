@@ -10,12 +10,12 @@ cloudlets, c_storage, c_CPU, c_RAM = multidict({
 })
 
 # units: storage(MB), cpu(MIPS), RAM(MB), delayThreshold(ms)
-VMs, v_storage, v_CPU, v_RAM, v_delayThreshold = multidict({
-    'v1': [150, 2100, 120, 5000],
-    'v2': [150, 2200, 220, 5000],
-    'v3': [170, 2300, 320, 5000],
-    'v4': [180, 2400, 420, 5000],
-    'v5': [190, 2500, 520, 5000]
+VMs, v_user, v_storage, v_CPU, v_RAM, v_delayThreshold = multidict({
+    'v1': ['u1', 150, 2100, 120, 5000],
+    'v2': ['u2', 150, 2200, 220, 5000],
+    'v3': ['u3', 170, 2300, 320, 5000],
+    'v4': ['u4', 180, 2400, 420, 5000],
+    'v5': ['u5', 190, 2500, 520, 5000]
 })
 
 # Each user has a VM to be executed in some Cloudlet (or Cloud) 
@@ -29,9 +29,7 @@ user, u_vm, u_cloudlet = multidict({
 })
 
 def findUserCloudletByVM(vm):
-    for u in user:
-        if u_vm[u] == vm:
-            return u_cloudlet[u]
+    return u_cloudlet[v_user[vm]]
 
 # Delay between the Cloudlets (n, ct): d
 # n: cloudlet  allocated to the user's vm
@@ -91,7 +89,7 @@ m.setObjective((
     quicksum(delay[n, findUserCloudletByVM(v)]*x[n,v] for n in cloudlets for v in VMs)
 ), GRB.MINIMIZE)
 
-m.write('gurobi/pli_cloudlet/p2_formulation.lp')
+m.write('gurobi/p2_formulation.lp')
 
 # Run the optimization engine
 m.optimize()

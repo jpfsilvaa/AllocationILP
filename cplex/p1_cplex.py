@@ -14,16 +14,16 @@ CLOUDLETS = [
 
 # units: storage(MB), cpu(MIPS), RAM(MB), delayThreshold(ms)
 VMs = [
-    ("V1", 150, 2100, 120, 5000),
-    ("V2", 150, 2200, 220, 5000),
-    ("V3", 170, 2300, 320, 5000),
-    ("V4", 180, 2400, 420, 5000),
-    ("V5", 190, 2500, 520, 5000)
+    ("V1", 'U1', 150, 2100, 120, 5000),
+    ("V2", 'U1', 150, 2200, 220, 5000),
+    ("V3", 'U1', 170, 2300, 320, 5000),
+    ("V4", 'U1', 180, 2400, 420, 5000),
+    ("V5", 'U1', 190, 2500, 520, 5000)
 ]
 
 # Data tuple
 Cloudlet = namedtuple("Cloudlet", ["c_name", "c_storage", "c_CPU", "c_RAM"])
-VM = namedtuple("VM", ["v_name", "v_storage", "v_CPU", "v_RAM", "v_delayTreshold"])
+VM = namedtuple("VM", ["v_name", "v_user","v_storage", "v_CPU", "v_RAM", "v_delayTreshold"])
 
 # COnnecting the data with the tuple
 cloudlets = [Cloudlet(*c) for c in CLOUDLETS]

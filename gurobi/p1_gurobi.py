@@ -10,12 +10,12 @@ cloudlets, c_storage, c_CPU, c_RAM = multidict({
 })
 
 # units: storage(MB), cpu(MIPS), RAM(MB), delayThreshold(ms)
-VMs, v_storage, v_CPU, v_RAM, v_delayThreshold = multidict({
-    'v1': [150, 2100, 120, 5000],
-    'v2': [150, 2200, 220, 5000],
-    'v3': [170, 2300, 320, 5000],
-    'v4': [180, 2400, 420, 5000],
-    'v5': [190, 2500, 520, 5000],
+VMs, v_user, v_storage, v_CPU, v_RAM, v_delayThreshold = multidict({
+    'v1': ['u1', 150, 2100, 120, 5000],
+    'v2': ['u2', 150, 2200, 220, 5000],
+    'v3': ['u3', 170, 2300, 320, 5000],
+    'v4': ['u4', 180, 2400, 420, 5000],
+    'v5': ['u5', 190, 2500, 520, 5000]
 })
 
 m = Model('Cloudlet-VM Allocation')
@@ -50,7 +50,7 @@ for v in VMs:
 
 # objective function
 m.setObjective((x.sum(cloudlets[0], '*')), GRB.MINIMIZE)
-m.write('gurobi/pli_cloudlet/p1_formulation.lp')
+m.write('gurobi/p1_formulation.lp')
 
 # Run the optimization engine
 m.optimize()

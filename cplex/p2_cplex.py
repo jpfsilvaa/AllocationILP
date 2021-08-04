@@ -14,16 +14,16 @@ CLOUDLETS = [
 
 # units: storage(MB), cpu(MIPS), RAM(MB), delayThreshold(ms)
 VMs = [
-    ("V1", 150, 2100, 120, 5000),
-    ("V2", 150, 2200, 220, 5000),
-    ("V3", 170, 2300, 320, 5000),
-    ("V4", 180, 2400, 420, 5000),
-    ("V5", 190, 2500, 520, 5000)
+    ("V1", 'U1', 150, 2100, 120, 5000),
+    ("V2", 'U1', 150, 2200, 220, 5000),
+    ("V3", 'U1', 170, 2300, 320, 5000),
+    ("V4", 'U1', 180, 2400, 420, 5000),
+    ("V5", 'U1', 190, 2500, 520, 5000)
 ]
 
 # Tuples for Cloudlet, VM and User for accessing data
 Cloudlet = namedtuple("Cloudlet", ["c_name", "c_storage", "c_CPU", "c_RAM"])
-VM = namedtuple("VM", ["v_name", "v_storage", "v_CPU", "v_RAM", "v_delayTreshold"])
+VM = namedtuple("VM", ["v_name", "v_user","v_storage", "v_CPU", "v_RAM", "v_delayTreshold"])
 User = namedtuple("User", ["user", "u_vm", "u_connected_cloudlet"])
 
 # Connecting the data with the tuple
@@ -68,7 +68,7 @@ idx = [(n.c_name,v.v_name) for n in cloudlets for v in vms]
 
 def findDelay(allocatedCloudlet, vm):
     for u in users:
-        if u.u_vm == vm:
+        if u.user == vm.v_user:
             return DELAY_COMBINATION[allocatedCloudlet, u.u_connected_cloudlet]
 
 modl = Model("Delay minimization")

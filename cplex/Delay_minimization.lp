@@ -3,11 +3,11 @@
 \Problem name: Delay minimization
 
 Minimize
- obj: 30000 allocate_C0_V1 + 35000 allocate_C0_V2 + 35000 allocate_C0_V3
-      + 33000 allocate_C0_V4 + 30000 allocate_C0_V5 + 1500 allocate_C1_V2
-      + 1500 allocate_C1_V3 + 1200 allocate_C1_V4 + 1500 allocate_C2_V1
-      + 1000 allocate_C2_V4 + 1500 allocate_C2_V5 + 1200 allocate_C3_V1
-      + 1000 allocate_C3_V2 + 1000 allocate_C3_V3 + 1200 allocate_C3_V5
+ obj: 30000 allocate_C0_V1 + 30000 allocate_C0_V2 + 30000 allocate_C0_V3
+      + 30000 allocate_C0_V4 + 30000 allocate_C0_V5 + 1500 allocate_C2_V1
+      + 1500 allocate_C2_V2 + 1500 allocate_C2_V3 + 1500 allocate_C2_V4
+      + 1500 allocate_C2_V5 + 1200 allocate_C3_V1 + 1200 allocate_C3_V2
+      + 1200 allocate_C3_V3 + 1200 allocate_C3_V4 + 1200 allocate_C3_V5
 Subject To
  storageConstr: 150 allocate_C0_V1 + 150 allocate_C0_V2 + 170 allocate_C0_V3
                 + 180 allocate_C0_V4 + 190 allocate_C0_V5 <= 500000
