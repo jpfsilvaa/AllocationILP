@@ -5,7 +5,7 @@ from itertools import product
 
 def vmGen(vmsQtt):
     VMs = []
-    for i in range(1, vmsQtt+1): # valor dado pelo argumetno
+    for i in range(1, vmsQtt+1):
         # units: storage(MB), cpu(MIPS), RAM(MB), delayThreshold(ms)
         VMs.append({
                 "name": f"v{i}",
@@ -28,7 +28,7 @@ def cloudletGen(cloudletQtt):
                 "c_RAM": 200*pow(10, 3)
             })
     
-    for i in range(1, cloudletQtt+1): # valor dado pelo argumento
+    for i in range(1, cloudletQtt+1):
         # units: storage(MB), cpu(MIPS), RAM(MB)
         Cloudlets.append({
                 "name": f"c{i}",
