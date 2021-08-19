@@ -3,8 +3,8 @@ from collections import namedtuple
 import sys
 import json
 
-def readJSONData():
-    jsonFile = open('/home/jps/pli/data/instances.json')
+def readJSONData(jsonFilePath):
+    jsonFile = open(jsonFilePath)
     data = json.load(jsonFile)
     jsonFile.close()
     return data
@@ -52,8 +52,8 @@ def printSolution(modelOpt):
     modelOpt.print_information()
     modelOpt.print_solution()
 
-def build(pliOption):
-    data = readJSONData()
+def build(pliOption, jsonFilePath):
+    data = readJSONData(jsonFilePath)
 
     cloudlets = buildCloudletTuples(data['Cloudlets'])
     vms = buildVMTuples(data['VMs'])
@@ -133,7 +133,7 @@ def main():
     # python formulation_cplex_json.py <1 for PLI 1 or 2 for PLI 2>
     args = sys.argv[1:]
     if validateArgs(args):
-        build(args[0])
+        build(args[0], args[1])
 
 if __name__ == "__main__":
     main()

@@ -2,8 +2,8 @@ from gurobipy import *
 import sys
 import json
 
-def readJSONData():
-    jsonFile = open('/home/jps/pli/data/instances.json')
+def readJSONData(jsonFilePath):
+    jsonFile = open(jsonFilePath)
     data = json.load(jsonFile)
     jsonFile.close()
     return data
@@ -41,8 +41,8 @@ def printSolution(modelOpt):
         if (abs(v.x) > 1e-6):
             print(v.varName, v.x)
 
-def build(pliOption):
-    data = readJSONData()
+def build(pliOption, jsonFilePath):
+    data = readJSONData(jsonFilePath)
 
     v_names, v_user, v_storage, v_CPU, v_RAM, v_delayThreshold = buildVMsDict(data['VMs'])
     c_names, c_storage, c_CPU, c_RAM = buildCloudletsDict(data['Cloudlets'])
@@ -103,7 +103,7 @@ def main():
     # python formulation_gurobi_json.py <1 for PLI 1 or 2 for PLI 2>
     args = sys.argv[1:]
     if validateArgs(args):
-        build(args[0])
+        build(args[0], args[1])
 
 if __name__ == "__main__":
     main()
