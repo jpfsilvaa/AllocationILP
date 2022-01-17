@@ -52,7 +52,7 @@ def printSolution(modelOpt):
     modelOpt.print_information()
     modelOpt.print_solution()
 
-def build(pliOption, jsonFilePath):
+def build(pliOption, jsonFilePath, outFilePath):
     data = readJSONData(jsonFilePath)
 
     cloudlets = buildCloudletTuples(data['Cloudlets'])
@@ -115,7 +115,7 @@ def build(pliOption, jsonFilePath):
 
     modl.minimize(expr)
 
-    modl.export_as_lp("/home/jps/pli/cplex")
+    modl.export_as_lp(outFilePath)
     solution = modl.solve()
 
     printSolution(modl)
@@ -130,10 +130,10 @@ def validateArgs(args):
         return False
 
 def main():
-    # python formulation_cplex_json.py <1 for PLI 1 or 2 for PLI 2>
+    # python formulation_cplex_json.py <1 for PLI 1 or 2 for PLI 2> <json file path> <output file path>
     args = sys.argv[1:]
     if validateArgs(args):
-        build(args[0], args[1])
+        build(args[0], args[1], args[2])
 
 if __name__ == "__main__":
     main()
