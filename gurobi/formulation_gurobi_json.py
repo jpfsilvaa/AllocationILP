@@ -41,7 +41,7 @@ def printSolution(modelOpt):
         if (abs(v.x) > 1e-6):
             print(v.varName, v.x)
 
-def build(pliOption, jsonFilePath):
+def build(pliOption, jsonFilePath, outFilePath):
     data = readJSONData(jsonFilePath)
 
     v_names, v_user, v_storage, v_CPU, v_RAM, v_delayThreshold = buildVMsDict(data['VMs'])
@@ -84,7 +84,7 @@ def build(pliOption, jsonFilePath):
 
     m.setObjective(expr, GRB.MINIMIZE)
 
-    fileName = f"/home/jps/pli/gurobi/p{pliOption}_formulation.lp"
+    fileName = f"{outFilePath}/p{pliOption}_formulation.lp"
     m.write(fileName)
 
     m.optimize()
@@ -100,10 +100,10 @@ def validateArgs(args):
         return False
 
 def main():
-    # python formulation_gurobi_json.py <1 for PLI 1 or 2 for PLI 2>
+    # python formulation_gurobi_json.py <1 for PLI 1 or 2 for PLI 2> <json file path> <out file path directory>
     args = sys.argv[1:]
     if validateArgs(args):
-        build(args[0], args[1])
+        build(args[0], args[1], args[2])
 
 if __name__ == "__main__":
     main()
