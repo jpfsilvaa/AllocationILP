@@ -70,6 +70,7 @@ def delayGen(cloudlets):
 def build(args):
     vmsArg = int(args[0])
     cloudletsArg = int(args[1])
+    outFilePath = args[2]
 
     cloudlets = cloudletGen(cloudletsArg)
     mainObject = {"VMs": vmGen(vmsArg), 
@@ -78,7 +79,7 @@ def build(args):
                     "DelayBetweenCloudlets": delayGen(cloudlets)}
 
     jsonString = json.dumps(mainObject, indent=4)
-    jsonFile = open("/home/jps/pli/data/instances.json", "w")
+    jsonFile = open(outFilePath, "w")
     jsonFile.write(jsonString)
     jsonFile.close()
 
