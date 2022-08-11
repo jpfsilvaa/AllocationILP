@@ -1,4 +1,5 @@
 import json, math
+import time
 
 class Coordinates:
     def __init__(self, cpu, ram, storage):
@@ -53,7 +54,9 @@ def greedyAlloc(cloudlet, vms):
             allocatedUsers.append(chosenUser.id)
             socialWelfare += chosenUser.bid
         userPointer += 1
-    print("allocated users -> ", allocatedUsers)
+    
+    print('num allocated users:', len(allocatedUsers))
+    print('allocated users:', allocatedUsers)
     return socialWelfare
 
 def readJSONData(jsonFilePath):
@@ -85,11 +88,14 @@ def buildUserVms(jsonData):
     return vmsList
 
 def main():
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/test_1000_instances.json'
+    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/t40BC.json'
     data = readJSONData(jsonFilePath)
     cloudlet = buildCloudlet(data['Cloudlets'])
     userVms = buildUserVms(data['UserVMs'])
-    print('FINAL SOCIAL WELFARE -> ', greedyAlloc(cloudlet, userVms))
+    startTime = time.time()
+    print('social welfare:', greedyAlloc(cloudlet, userVms))
+    endTime = time.time()
+    print('execution time:', (endTime-startTime))
 
 if __name__ == "__main__":
     main()

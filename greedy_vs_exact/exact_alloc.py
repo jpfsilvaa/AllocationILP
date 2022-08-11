@@ -1,6 +1,7 @@
 from gurobipy import *
 import sys
 import json
+import time
 
 def readJSONData(jsonFilePath):
     jsonFile = open(jsonFilePath)
@@ -22,10 +23,13 @@ def buildCloudletsDict(cloudletsJsonData):
 
 # Display optimal values of decision variables
 def printSolution(modelOpt):
+    numAlloc = 0
     for v in modelOpt.getVars():
         if (abs(v.x) > 1e-6):
+            numAlloc += 1
             print(v.varName, v.x)
-    print("social welfare -> ", modelOpt.objVal)
+    print("num allocated users:", numAlloc)
+    print("social welfare:", modelOpt.objVal)
 
 def build(jsonFilePath):
     data = readJSONData(jsonFilePath)
@@ -61,11 +65,14 @@ def build(jsonFilePath):
     fileName = "/home/jps/allocation_models/greedy_vs_exact/exact_formulation.lp"
     m.write(fileName)
 
+    startTime = time.time()
     m.optimize()
+    endTime = time.time()
     printSolution(m)
+    print('execution time:', (endTime-startTime))
 
 def main():    
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/test_1000_instances.json'    
+    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/t40BC.json'    
     build(jsonFilePath)
 
 if __name__ == "__main__":
