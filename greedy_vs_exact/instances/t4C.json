@@ -1,0 +1,40 @@
+{
+    "UserVMs": [
+        {
+            "id": "v1",
+            "bid": 109,
+            "v_storage": 786417,
+            "v_CPU": 3006,
+            "v_RAM": 104
+        },
+        {
+            "id": "v2",
+            "bid": 117,
+            "v_storage": 861014,
+            "v_CPU": 3292,
+            "v_RAM": 89
+        },
+        {
+            "id": "v3",
+            "bid": 98,
+            "v_storage": 857343,
+            "v_CPU": 2840,
+            "v_RAM": 104
+        },
+        {
+            "id": "v4",
+            "bid": 81,
+            "v_storage": 811684,
+            "v_CPU": 2870,
+            "v_RAM": 91
+        }
+    ],
+    "Cloudlets": [
+        {
+            "id": "c1",
+            "c_storage": 16777216,
+            "c_CPU": 3234,
+            "c_RAM": 1024
+        }
+    ]
+}
