@@ -11,6 +11,7 @@ class User:
     def __init__(self, id, bid, maxCoord, coords):
         self.id = id
         self.bid = bid
+        self.price = 0
         self.maxCoord = maxCoord
         self.coords = coords
 
@@ -51,13 +52,13 @@ def greedyAlloc(cloudlet, vms):
         chosenUser = D[userPointer][0]
         if chosenUser.maxCoord + occupation <= 1:
             occupation += chosenUser.maxCoord
-            allocatedUsers.append(chosenUser.id)
+            allocatedUsers.append(chosenUser)
             socialWelfare += chosenUser.bid
         userPointer += 1
     
     print('num allocated users:', len(allocatedUsers))
-    print('allocated users:', allocatedUsers)
-    return socialWelfare
+    print('allocated users:', [user.id for user in allocatedUsers])
+    return [socialWelfare, allocatedUsers, D]
 
 def readJSONData(jsonFilePath):
     jsonFile = open(jsonFilePath)
@@ -87,15 +88,44 @@ def buildUserVms(jsonData):
                         )
     return vmsList
 
+def pricing(winners, densities):
+    i = 0
+    while i < len(winners):
+        occupation = 0
+        winner = winners[i]
+        j = 0
+        while occupation + winner.maxCoord <= 1 and j < len(densities):
+            if densities[j][0].id != winner.id and occupation + densities[j][0].maxCoord <= 1:
+                occupation += densities[j][0].maxCoord
+            j += 1
+
+        if j == len(densities):
+            winner.price = 0
+        else:
+            winner.price = densities[j-1][1]*winner.maxCoord
+        print('-----------')
+        print('len(densities) and j->', len(densities), j)
+        print('critical value (b_j/w_j)->', densities[j-1][1])
+        print('winner density (b_i/w_i)->', winner.bid/winner.maxCoord)
+        print('winner bid (b_i)->', winner.bid)
+        print('winner maxCoord (w_i)->', winner.maxCoord)
+        print('winner price->', winner.price)
+        i += 1
+
+    return [{user.id: (user.bid, str(user.price).replace('.', ','))} for user in winners]
+
 def main():
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/t40BC.json'
+    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/t12AB.json'
     data = readJSONData(jsonFilePath)
     cloudlet = buildCloudlet(data['Cloudlets'])
     userVms = buildUserVms(data['UserVMs'])
     startTime = time.time()
-    print('social welfare:', greedyAlloc(cloudlet, userVms))
+    result = greedyAlloc(cloudlet, userVms)
     endTime = time.time()
-    print('execution time:', (endTime-startTime))
+
+    print('social welfare:', result[0])
+    print('execution time:', str(endTime-startTime).replace('.', ','))
+    print('prices (user: (bid, price)) : ', pricing(winners=result[1], densities=result[2]))
 
 if __name__ == "__main__":
     main()
