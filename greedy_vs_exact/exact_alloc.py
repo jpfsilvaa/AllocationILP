@@ -62,17 +62,28 @@ def build(jsonFilePath):
 
     m.setObjective(expr, GRB.MAXIMIZE)
 
-    fileName = "/home/jps/allocation_models/greedy_vs_exact/exact_formulation.lp"
-    m.write(fileName)
+    # fileName = "/home/jps/allocation_models/greedy_vs_exact/exact_formulation.lp"
+    # m.write(fileName)
 
     startTime = time.time()
     m.optimize()
     endTime = time.time()
+    optResult = getResult()
     printSolution(m)
     print('execution time:', (endTime-startTime))
+    print('prices->', pricing())
+
+def getResult():
+    ILPResult = dict()
+    
+
+def pricing():
+    socialWelfareValue = 0
+    clarkeValue = 0
+    
 
 def main():    
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/t40BC.json'    
+    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vGama/clE.json'    
     build(jsonFilePath)
 
 if __name__ == "__main__":

@@ -8,11 +8,12 @@ class Coordinates:
         self.storage = storage
 
 class User:
-    def __init__(self, id, bid, maxCoord, coords):
+    def __init__(self, id, vmType, bid, coords):
         self.id = id
+        self.vmType = vmType
         self.bid = bid
         self.price = 0
-        self.maxCoord = maxCoord
+        self.maxCoord = 0
         self.coords = coords
 
 class Cloudlet:
@@ -23,7 +24,7 @@ class Cloudlet:
 def normalize(cloudlet, vms):
     normalized = []
     for v in vms:
-        normalized.append(User(v.id, v.bid, v.maxCoord, Coordinates(
+        normalized.append(User(v.id, v.vmType, v.bid, Coordinates(
             v.coords.cpu/cloudlet.coords.cpu,
             v.coords.ram/cloudlet.coords.ram,
             v.coords.storage/cloudlet.coords.storage
@@ -80,7 +81,7 @@ def buildCloudlet(jsonData):
 def buildUserVms(jsonData):
     vmsList = []
     for user in jsonData:
-        vmsList.append(User(user['id'], int(user['bid']), 0, 
+        vmsList.append(User(user['id'], user['vmType'], int(user['bid']),
                             Coordinates(int(user['v_CPU']), 
                             int(user['v_RAM']),
                             int(user['v_storage']))
@@ -98,24 +99,28 @@ def pricing(winners, densities):
             if densities[j][0].id != winner.id and occupation + densities[j][0].maxCoord <= 1:
                 occupation += densities[j][0].maxCoord
             j += 1
-
         if j == len(densities):
             winner.price = 0
         else:
             winner.price = densities[j-1][1]*winner.maxCoord
-        print('-----------')
-        print('len(densities) and j->', len(densities), j)
-        print('critical value (b_j/w_j)->', densities[j-1][1])
-        print('winner density (b_i/w_i)->', winner.bid/winner.maxCoord)
-        print('winner bid (b_i)->', winner.bid)
-        print('winner maxCoord (w_i)->', winner.maxCoord)
-        print('winner price->', winner.price)
+
+        printResults(winner, densities[j-1][1])
         i += 1
 
     return [{user.id: (user.bid, str(user.price).replace('.', ','))} for user in winners]
 
+def printResults(winner, criticalValue):
+    print('-----------')
+    print('user id ->', winner.id)
+    print('vmType ->', winner.vmType)
+    print('critical value (b_j/w_j)->', criticalValue)
+    print('winner density (b_i/w_i)->', winner.bid/winner.maxCoord)
+    print('winner bid (b_i)->', winner.bid)
+    print('winner maxCoord (w_i)->', winner.maxCoord)
+    print('winner price->', winner.price)
+
 def main():
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/t12AB.json'
+    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vGama/clA.json'
     data = readJSONData(jsonFilePath)
     cloudlet = buildCloudlet(data['Cloudlets'])
     userVms = buildUserVms(data['UserVMs'])
@@ -125,7 +130,7 @@ def main():
 
     print('social welfare:', result[0])
     print('execution time:', str(endTime-startTime).replace('.', ','))
-    print('prices (user: (bid, price)) : ', pricing(winners=result[1], densities=result[2]))
+    print('\nprices (user: (bid, price)) : ', pricing(winners=result[1], densities=result[2]))
 
 if __name__ == "__main__":
     main()
