@@ -120,7 +120,7 @@ def printResults(winner, criticalValue):
     print('winner price->', winner.price)
 
 def main():
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vDelta/clE/clE_10.json'
+    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vDelta/clA/clA_10.json'
     data = readJSONData(jsonFilePath)
     cloudlet = buildCloudlet(data['Cloudlets'])
     userVms = buildUserVms(data['UserVMs'])

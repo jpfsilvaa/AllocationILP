@@ -3,34 +3,35 @@ Using license file /home/jps/gurobi.lic
 Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
 Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
 Optimize a model with 3 rows, 50 columns and 150 nonzeros
-Model fingerprint: 0x4af8c746
+Model fingerprint: 0xbfa15616
 Variable types: 0 continuous, 50 integer (50 binary)
 Coefficient statistics:
   Matrix range     [3e+03, 7e+04]
   Objective range  [8e+01, 2e+02]
   Bounds range     [1e+00, 1e+00]
-  RHS range        [2e+04, 3e+05]
-Found heuristic solution: objective 80.0000000
-Presolve removed 2 rows and 38 columns
+  RHS range        [6e+04, 2e+06]
+Found heuristic solution: objective 788.0000000
+Presolve removed 2 rows and 6 columns
 Presolve time: 0.00s
-Presolved: 1 rows, 12 columns, 12 nonzeros
-Found heuristic solution: objective 470.0000000
-Variable types: 0 continuous, 12 integer (9 binary)
+Presolved: 1 rows, 44 columns, 44 nonzeros
+Variable types: 0 continuous, 44 integer (39 binary)
 
-Root relaxation: cutoff, 0 iterations, 0.00 seconds
+Root relaxation: objective 1.561000e+03, 1 iterations, 0.00 seconds
 
-Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    1561.0000000 1561.00000  0.00%     -    0s
+
+Explored 0 nodes (1 simplex iterations) in 0.01 seconds
 Thread count was 8 (of 8 available processors)
 
-Solution count 2: 470 80 
+Solution count 2: 1561 788 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 4.700000000000e+02, best bound 4.700000000000e+02, gap 0.0000%
-allocate[cA,v13] 1.0
-allocate[cA,v20] 1.0
-allocate[cA,v37] 1.0
-allocate[cA,v48] 1.0
-num allocated users: 4
-social welfare: 470.0
-execution time: 0.01856088638305664
+Best objective 1.561000000000e+03, best bound 1.561000000000e+03, gap 0.0000%
+v9, v13, v16, v20, v26, v27, v32, v33, v34, v35, v37, v40, v43, v47, v48, 
+num allocated users: 15
+social welfare: 1561.0
+execution time: 0,009534120559692383
 prices-> None

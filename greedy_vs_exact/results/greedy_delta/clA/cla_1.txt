@@ -1,15 +1,42 @@
-num allocated users: 1
-allocated users: ['v4']
-social welfare: 108
-execution time: 2,86102294921875e-05
+num allocated users: 4
+allocated users: ['v7', 'v40', 'v15', 'v8']
+social welfare: 453
+execution time: 0,00012493133544921875
 -----------
-user id -> v4
-vmType -> gp2
-critical value (b_j/w_j)-> 45.0
-winner density (b_i/w_i)-> 108.0
-winner bid (b_i)-> 108
-winner maxCoord (w_i)-> 1.0
-winner price-> 0
+user id -> v7
+vmType -> gp1
+critical value (b_j/w_j)-> 404.0
+winner density (b_i/w_i)-> 468.0
+winner bid (b_i)-> 117
+winner maxCoord (w_i)-> 0.25
+winner price-> 101.0
+---------
+-----------
+user id -> v40
+vmType -> gp1
+critical value (b_j/w_j)-> 404.0
+winner density (b_i/w_i)-> 460.0
+winner bid (b_i)-> 115
+winner maxCoord (w_i)-> 0.25
+winner price-> 101.0
+---------
+-----------
+user id -> v15
+vmType -> gp1
+critical value (b_j/w_j)-> 404.0
+winner density (b_i/w_i)-> 448.0
+winner bid (b_i)-> 112
+winner maxCoord (w_i)-> 0.25
+winner price-> 101.0
+---------
+-----------
+user id -> v8
+vmType -> gp1
+critical value (b_j/w_j)-> 404.0
+winner density (b_i/w_i)-> 436.0
+winner bid (b_i)-> 109
+winner maxCoord (w_i)-> 0.25
+winner price-> 101.0
 ---------
 
-prices (user: (bid, price)) :  [{'v4': (108, '0')}]
+prices (user: (bid, price)) :  [{'v7': (117, '101,0')}, {'v40': (115, '101,0')}, {'v15': (112, '101,0')}, {'v8': (109, '101,0')}]

@@ -2,31 +2,36 @@ Academic license - for non-commercial use only - expires 2023-03-23
 Using license file /home/jps/gurobi.lic
 Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
 Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-Optimize a model with 3 rows, 15 columns and 45 nonzeros
-Model fingerprint: 0x9dd3fb56
-Variable types: 0 continuous, 15 integer (15 binary)
+Optimize a model with 3 rows, 50 columns and 150 nonzeros
+Model fingerprint: 0xc3f69195
+Variable types: 0 continuous, 50 integer (50 binary)
 Coefficient statistics:
   Matrix range     [3e+03, 7e+04]
   Objective range  [8e+01, 2e+02]
   Bounds range     [1e+00, 1e+00]
-  RHS range        [2e+04, 3e+05]
-Found heuristic solution: objective 110.0000000
-Presolve removed 3 rows and 15 columns
+  RHS range        [4e+04, 1e+06]
+Found heuristic solution: objective 705.0000000
+Presolve removed 1 rows and 26 columns
 Presolve time: 0.00s
-Presolve: All rows and columns removed
+Presolved: 2 rows, 24 columns, 48 nonzeros
+Variable types: 0 continuous, 24 integer (24 binary)
 
-Explored 0 nodes (0 simplex iterations) in 0.00 seconds
-Thread count was 1 (of 8 available processors)
+Root relaxation: objective 1.155000e+03, 1 iterations, 0.00 seconds
 
-Solution count 2: 390 110 
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    1155.0000000 1155.00000  0.00%     -    0s
+
+Explored 0 nodes (1 simplex iterations) in 0.01 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 1155 705 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 3.900000000000e+02, best bound 3.900000000000e+02, gap 0.0000%
-allocate[cA,v4] 1.0
-allocate[cA,v6] 1.0
-allocate[cA,v8] 1.0
-allocate[cA,v14] 1.0
-num allocated users: 4
-social welfare: 390.0
-execution time: 0.0008208751678466797
+Best objective 1.155000000000e+03, best bound 1.155000000000e+03, gap 0.0000%
+v4, v6, v14, v18, v21, v22, v28, v30, v43, v46, v48, 
+num allocated users: 11
+social welfare: 1155.0
+execution time: 0,006802558898925781
 prices-> None

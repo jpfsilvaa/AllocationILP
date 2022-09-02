@@ -1,24 +1,78 @@
-num allocated users: 2
-allocated users: ['v8', 'v5']
-social welfare: 195
-execution time: 4,9114227294921875e-05
+num allocated users: 8
+allocated users: ['v23', 'v34', 'v43', 'v8', 'v39', 'v13', 'v12', 'v5']
+social welfare: 830
+execution time: 0,00020360946655273438
+-----------
+user id -> v23
+vmType -> gp1
+critical value (b_j/w_j)-> 728.0
+winner density (b_i/w_i)-> 960.0
+winner bid (b_i)-> 120
+winner maxCoord (w_i)-> 0.125
+winner price-> 91.0
+---------
+-----------
+user id -> v34
+vmType -> gp1
+critical value (b_j/w_j)-> 728.0
+winner density (b_i/w_i)-> 888.0
+winner bid (b_i)-> 111
+winner maxCoord (w_i)-> 0.125
+winner price-> 91.0
+---------
+-----------
+user id -> v43
+vmType -> gp1
+critical value (b_j/w_j)-> 728.0
+winner density (b_i/w_i)-> 888.0
+winner bid (b_i)-> 111
+winner maxCoord (w_i)-> 0.125
+winner price-> 91.0
+---------
 -----------
 user id -> v8
 vmType -> gp1
-critical value (b_j/w_j)-> 49.0
-winner density (b_i/w_i)-> 412.0
+critical value (b_j/w_j)-> 728.0
+winner density (b_i/w_i)-> 824.0
 winner bid (b_i)-> 103
-winner maxCoord (w_i)-> 0.25
-winner price-> 0
+winner maxCoord (w_i)-> 0.125
+winner price-> 91.0
+---------
+-----------
+user id -> v39
+vmType -> gp1
+critical value (b_j/w_j)-> 728.0
+winner density (b_i/w_i)-> 824.0
+winner bid (b_i)-> 103
+winner maxCoord (w_i)-> 0.125
+winner price-> 91.0
+---------
+-----------
+user id -> v13
+vmType -> gp1
+critical value (b_j/w_j)-> 728.0
+winner density (b_i/w_i)-> 768.0
+winner bid (b_i)-> 96
+winner maxCoord (w_i)-> 0.125
+winner price-> 91.0
+---------
+-----------
+user id -> v12
+vmType -> gp1
+critical value (b_j/w_j)-> 728.0
+winner density (b_i/w_i)-> 752.0
+winner bid (b_i)-> 94
+winner maxCoord (w_i)-> 0.125
+winner price-> 91.0
 ---------
 -----------
 user id -> v5
 vmType -> gp1
-critical value (b_j/w_j)-> 49.0
-winner density (b_i/w_i)-> 368.0
+critical value (b_j/w_j)-> 728.0
+winner density (b_i/w_i)-> 736.0
 winner bid (b_i)-> 92
-winner maxCoord (w_i)-> 0.25
-winner price-> 0
+winner maxCoord (w_i)-> 0.125
+winner price-> 91.0
 ---------
 
-prices (user: (bid, price)) :  [{'v8': (103, '0')}, {'v5': (92, '0')}]
+prices (user: (bid, price)) :  [{'v23': (120, '91,0')}, {'v34': (111, '91,0')}, {'v43': (111, '91,0')}, {'v8': (103, '91,0')}, {'v39': (103, '91,0')}, {'v13': (96, '91,0')}, {'v12': (94, '91,0')}, {'v5': (92, '91,0')}]

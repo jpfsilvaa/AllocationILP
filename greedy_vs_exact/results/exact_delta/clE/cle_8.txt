@@ -3,38 +3,40 @@ Using license file /home/jps/gurobi.lic
 Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
 Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
 Optimize a model with 3 rows, 50 columns and 150 nonzeros
-Model fingerprint: 0x842f66af
+Model fingerprint: 0x932f60e9
 Variable types: 0 continuous, 50 integer (50 binary)
 Coefficient statistics:
   Matrix range     [3e+03, 7e+04]
   Objective range  [8e+01, 2e+02]
   Bounds range     [1e+00, 1e+00]
-  RHS range        [2e+04, 3e+05]
-Found heuristic solution: objective 393.0000000
-Presolve removed 2 rows and 37 columns
+  RHS range        [1e+05, 4e+06]
+Found heuristic solution: objective 1618.0000000
+Presolve removed 2 rows and 4 columns
 Presolve time: 0.00s
-Presolved: 1 rows, 13 columns, 13 nonzeros
-Variable types: 0 continuous, 13 integer (11 binary)
+Presolved: 1 rows, 46 columns, 46 nonzeros
+Variable types: 0 continuous, 46 integer (42 binary)
 
-Root relaxation: objective 4.680000e+02, 1 iterations, 0.00 seconds
+Root relaxation: objective 2.355750e+03, 1 iterations, 0.00 seconds
 
     Nodes    |    Current Node    |     Objective Bounds      |     Work
  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-*    0     0               0     468.0000000  468.00000  0.00%     -    0s
+     0     0 2355.75000    0    1 1618.00000 2355.75000  45.6%     -    0s
+H    0     0                    2329.0000000 2355.75000  1.15%     -    0s
+     0     0 2353.00000    0    2 2329.00000 2353.00000  1.03%     -    0s
 
-Explored 0 nodes (1 simplex iterations) in 0.00 seconds
+Cutting planes:
+  MIR: 1
+
+Explored 1 nodes (2 simplex iterations) in 0.01 seconds
 Thread count was 8 (of 8 available processors)
 
-Solution count 2: 468 393 
+Solution count 2: 2329 1618 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 4.680000000000e+02, best bound 4.680000000000e+02, gap 0.0000%
-allocate[cA,v8] 1.0
-allocate[cA,v11] 1.0
-allocate[cA,v18] 1.0
-allocate[cA,v47] 1.0
-num allocated users: 4
-social welfare: 468.0
-execution time: 0.003020048141479492
+Best objective 2.329000000000e+03, best bound 2.329000000000e+03, gap 0.0000%
+v0, v1, v2, v3, v6, v7, v8, v11, v18, v23, v28, v29, v30, v33, v34, v37, v38, v44, v47, v48, 
+num allocated users: 20
+social welfare: 2329.0
+execution time: 0,015346288681030273
 prices-> None

@@ -27,8 +27,8 @@ def printSolution(modelOpt):
     for v in modelOpt.getVars():
         if (abs(v.x) > 1e-6):
             numAlloc += 1
-            print(v.varName, v.x)
-    print("num allocated users:", numAlloc)
+            print(str(v.varName)[-4:-1].replace(',', ''), end=', ')
+    print("\nnum allocated users:", numAlloc)
     print("social welfare:", modelOpt.objVal)
 
 def build(jsonFilePath):
@@ -70,7 +70,7 @@ def build(jsonFilePath):
     endTime = time.time()
     optResult = getResult()
     printSolution(m)
-    print('execution time:', (endTime-startTime))
+    print('execution time:', str(endTime-startTime).replace('.', ','))
     print('prices->', pricing())
 
 def getResult():
@@ -83,7 +83,7 @@ def pricing():
     
 
 def main():    
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vDelta/clE/clE_10.json'    
+    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vDelta/clA/clA_10.json'    
     build(jsonFilePath)
 
 if __name__ == "__main__":

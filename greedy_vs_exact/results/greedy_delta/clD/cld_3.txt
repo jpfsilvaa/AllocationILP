@@ -1,42 +1,141 @@
-num allocated users: 4
-allocated users: ['v37', 'v13', 'v48', 'v20']
-social welfare: 470
-execution time: 0,00011920928955078125
+num allocated users: 15
+allocated users: ['v37', 'v13', 'v48', 'v20', 'v9', 'v32', 'v40', 'v34', 'v47', 'v33', 'v35', 'v26', 'v16', 'v27', 'v43']
+social welfare: 1561
+execution time: 0,00021028518676757812
 -----------
 user id -> v37
 vmType -> gp1
-critical value (b_j/w_j)-> 452.0
-winner density (b_i/w_i)-> 476.0
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1904.0
 winner bid (b_i)-> 119
-winner maxCoord (w_i)-> 0.25
-winner price-> 113.0
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
 ---------
 -----------
 user id -> v13
 vmType -> gp1
-critical value (b_j/w_j)-> 452.0
-winner density (b_i/w_i)-> 472.0
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1888.0
 winner bid (b_i)-> 118
-winner maxCoord (w_i)-> 0.25
-winner price-> 113.0
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
 ---------
 -----------
 user id -> v48
 vmType -> gp1
-critical value (b_j/w_j)-> 452.0
-winner density (b_i/w_i)-> 468.0
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1872.0
 winner bid (b_i)-> 117
-winner maxCoord (w_i)-> 0.25
-winner price-> 113.0
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
 ---------
 -----------
 user id -> v20
 vmType -> gp1
-critical value (b_j/w_j)-> 452.0
-winner density (b_i/w_i)-> 464.0
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1856.0
 winner bid (b_i)-> 116
-winner maxCoord (w_i)-> 0.25
-winner price-> 113.0
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v9
+vmType -> gp1
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1808.0
+winner bid (b_i)-> 113
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v32
+vmType -> gp1
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1808.0
+winner bid (b_i)-> 113
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v40
+vmType -> gp1
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1712.0
+winner bid (b_i)-> 107
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v34
+vmType -> gp1
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1616.0
+winner bid (b_i)-> 101
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v47
+vmType -> gp1
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1616.0
+winner bid (b_i)-> 101
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v33
+vmType -> gp1
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1488.0
+winner bid (b_i)-> 93
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v35
+vmType -> gp1
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1488.0
+winner bid (b_i)-> 93
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v26
+vmType -> gp1
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1376.0
+winner bid (b_i)-> 86
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v16
+vmType -> gp1
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1344.0
+winner bid (b_i)-> 84
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v27
+vmType -> gp1
+critical value (b_j/w_j)-> 360.0
+winner density (b_i/w_i)-> 1296.0
+winner bid (b_i)-> 81
+winner maxCoord (w_i)-> 0.0625
+winner price-> 0
+---------
+-----------
+user id -> v43
+vmType -> gp2
+critical value (b_j/w_j)-> 944.0
+winner density (b_i/w_i)-> 952.0
+winner bid (b_i)-> 119
+winner maxCoord (w_i)-> 0.125
+winner price-> 118.0
 ---------
 
-prices (user: (bid, price)) :  [{'v37': (119, '113,0')}, {'v13': (118, '113,0')}, {'v48': (117, '113,0')}, {'v20': (116, '113,0')}]
+prices (user: (bid, price)) :  [{'v37': (119, '0')}, {'v13': (118, '0')}, {'v48': (117, '0')}, {'v20': (116, '0')}, {'v9': (113, '0')}, {'v32': (113, '0')}, {'v40': (107, '0')}, {'v34': (101, '0')}, {'v47': (101, '0')}, {'v33': (93, '0')}, {'v35': (93, '0')}, {'v26': (86, '0')}, {'v16': (84, '0')}, {'v27': (81, '0')}, {'v43': (119, '118,0')}]

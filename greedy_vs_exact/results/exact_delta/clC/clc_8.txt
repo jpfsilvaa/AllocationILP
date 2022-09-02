@@ -2,31 +2,36 @@ Academic license - for non-commercial use only - expires 2023-03-23
 Using license file /home/jps/gurobi.lic
 Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
 Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-Optimize a model with 3 rows, 15 columns and 45 nonzeros
-Model fingerprint: 0x7619cf38
-Variable types: 0 continuous, 15 integer (15 binary)
+Optimize a model with 3 rows, 50 columns and 150 nonzeros
+Model fingerprint: 0xdefb7591
+Variable types: 0 continuous, 50 integer (50 binary)
 Coefficient statistics:
-  Matrix range     [3e+03, 3e+04]
+  Matrix range     [3e+03, 7e+04]
   Objective range  [8e+01, 2e+02]
   Bounds range     [1e+00, 1e+00]
-  RHS range        [2e+04, 3e+05]
-Found heuristic solution: objective 393.0000000
-Presolve removed 3 rows and 15 columns
+  RHS range        [4e+04, 1e+06]
+Found heuristic solution: objective 1006.0000000
+Presolve removed 1 rows and 25 columns
 Presolve time: 0.00s
-Presolve: All rows and columns removed
+Presolved: 2 rows, 25 columns, 50 nonzeros
+Variable types: 0 continuous, 25 integer (23 binary)
 
-Explored 0 nodes (0 simplex iterations) in 0.01 seconds
-Thread count was 1 (of 8 available processors)
+Root relaxation: objective 1.181000e+03, 1 iterations, 0.00 seconds
 
-Solution count 2: 449 393 
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    1181.0000000 1181.00000  0.00%     -    0s
+
+Explored 0 nodes (1 simplex iterations) in 0.01 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 1181 1006 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 4.490000000000e+02, best bound 4.490000000000e+02, gap 0.0000%
-allocate[cA,v0] 1.0
-allocate[cA,v7] 1.0
-allocate[cA,v8] 1.0
-allocate[cA,v11] 1.0
-num allocated users: 4
-social welfare: 449.0
-execution time: 0.005973100662231445
+Best objective 1.181000000000e+03, best bound 1.181000000000e+03, gap 0.0000%
+v0, v1, v3, v7, v8, v11, v18, v28, v37, v44, v47, 
+num allocated users: 11
+social welfare: 1181.0
+execution time: 0,01408076286315918
 prices-> None

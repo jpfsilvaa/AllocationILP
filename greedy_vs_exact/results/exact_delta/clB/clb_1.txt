@@ -2,29 +2,32 @@ Academic license - for non-commercial use only - expires 2023-03-23
 Using license file /home/jps/gurobi.lic
 Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
 Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-Optimize a model with 3 rows, 10 columns and 30 nonzeros
-Model fingerprint: 0x4c52ea16
-Variable types: 0 continuous, 10 integer (10 binary)
+Optimize a model with 3 rows, 50 columns and 150 nonzeros
+Model fingerprint: 0xc1302c6a
+Variable types: 0 continuous, 50 integer (50 binary)
 Coefficient statistics:
   Matrix range     [3e+03, 7e+04]
-  Objective range  [9e+01, 2e+02]
+  Objective range  [8e+01, 2e+02]
   Bounds range     [1e+00, 1e+00]
-  RHS range        [2e+04, 3e+05]
-Found heuristic solution: objective 108.0000000
-Presolve removed 3 rows and 10 columns
+  RHS range        [3e+04, 5e+05]
+Found heuristic solution: objective 180.0000000
+Presolve removed 2 rows and 38 columns
 Presolve time: 0.00s
-Presolve: All rows and columns removed
+Presolved: 1 rows, 12 columns, 12 nonzeros
+Found heuristic solution: objective 831.0000000
+Variable types: 0 continuous, 12 integer (11 binary)
+
+Root relaxation: cutoff, 0 iterations, 0.00 seconds
 
 Explored 0 nodes (0 simplex iterations) in 0.00 seconds
-Thread count was 1 (of 8 available processors)
+Thread count was 8 (of 8 available processors)
 
-Solution count 2: 226 108 
+Solution count 2: 831 180 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 2.260000000000e+02, best bound 2.260000000000e+02, gap 0.0000%
-allocate[cA,v7] 1.0
-allocate[cA,v8] 1.0
-num allocated users: 2
-social welfare: 226.0
-execution time: 0.0008819103240966797
+Best objective 8.310000000000e+02, best bound 8.310000000000e+02, gap 0.0000%
+v7, v8, v15, v24, v40, v41, v42, v46, 
+num allocated users: 8
+social welfare: 831.0
+execution time: 0,0015196800231933594
 prices-> None

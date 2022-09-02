@@ -1,15 +1,78 @@
-num allocated users: 1
-allocated users: ['v9']
-social welfare: 113
-execution time: 3,886222839355469e-05
+num allocated users: 8
+allocated users: ['v37', 'v13', 'v48', 'v20', 'v9', 'v32', 'v40', 'v34']
+social welfare: 904
+execution time: 0,00021958351135253906
+-----------
+user id -> v37
+vmType -> gp1
+critical value (b_j/w_j)-> 808.0
+winner density (b_i/w_i)-> 952.0
+winner bid (b_i)-> 119
+winner maxCoord (w_i)-> 0.125
+winner price-> 101.0
+---------
+-----------
+user id -> v13
+vmType -> gp1
+critical value (b_j/w_j)-> 808.0
+winner density (b_i/w_i)-> 944.0
+winner bid (b_i)-> 118
+winner maxCoord (w_i)-> 0.125
+winner price-> 101.0
+---------
+-----------
+user id -> v48
+vmType -> gp1
+critical value (b_j/w_j)-> 808.0
+winner density (b_i/w_i)-> 936.0
+winner bid (b_i)-> 117
+winner maxCoord (w_i)-> 0.125
+winner price-> 101.0
+---------
+-----------
+user id -> v20
+vmType -> gp1
+critical value (b_j/w_j)-> 808.0
+winner density (b_i/w_i)-> 928.0
+winner bid (b_i)-> 116
+winner maxCoord (w_i)-> 0.125
+winner price-> 101.0
+---------
 -----------
 user id -> v9
 vmType -> gp1
-critical value (b_j/w_j)-> 89.0
-winner density (b_i/w_i)-> 452.0
+critical value (b_j/w_j)-> 808.0
+winner density (b_i/w_i)-> 904.0
 winner bid (b_i)-> 113
-winner maxCoord (w_i)-> 0.25
-winner price-> 22.25
+winner maxCoord (w_i)-> 0.125
+winner price-> 101.0
+---------
+-----------
+user id -> v32
+vmType -> gp1
+critical value (b_j/w_j)-> 808.0
+winner density (b_i/w_i)-> 904.0
+winner bid (b_i)-> 113
+winner maxCoord (w_i)-> 0.125
+winner price-> 101.0
+---------
+-----------
+user id -> v40
+vmType -> gp1
+critical value (b_j/w_j)-> 808.0
+winner density (b_i/w_i)-> 856.0
+winner bid (b_i)-> 107
+winner maxCoord (w_i)-> 0.125
+winner price-> 101.0
+---------
+-----------
+user id -> v34
+vmType -> gp1
+critical value (b_j/w_j)-> 808.0
+winner density (b_i/w_i)-> 808.0
+winner bid (b_i)-> 101
+winner maxCoord (w_i)-> 0.125
+winner price-> 101.0
 ---------
 
-prices (user: (bid, price)) :  [{'v9': (113, '22,25')}]
+prices (user: (bid, price)) :  [{'v37': (119, '101,0')}, {'v13': (118, '101,0')}, {'v48': (117, '101,0')}, {'v20': (116, '101,0')}, {'v9': (113, '101,0')}, {'v32': (113, '101,0')}, {'v40': (107, '101,0')}, {'v34': (101, '101,0')}]

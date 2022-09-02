@@ -2,29 +2,43 @@ Academic license - for non-commercial use only - expires 2023-03-23
 Using license file /home/jps/gurobi.lic
 Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
 Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-Optimize a model with 3 rows, 15 columns and 45 nonzeros
-Model fingerprint: 0xe2d4ecc0
-Variable types: 0 continuous, 15 integer (15 binary)
+Optimize a model with 3 rows, 50 columns and 150 nonzeros
+Model fingerprint: 0x5ab47dc3
+Variable types: 0 continuous, 50 integer (50 binary)
 Coefficient statistics:
   Matrix range     [3e+03, 7e+04]
-  Objective range  [9e+01, 2e+02]
+  Objective range  [8e+01, 2e+02]
   Bounds range     [1e+00, 1e+00]
-  RHS range        [2e+04, 3e+05]
-Found heuristic solution: objective 108.0000000
-Presolve removed 3 rows and 15 columns
+  RHS range        [4e+04, 1e+06]
+Found heuristic solution: objective 211.0000000
+Presolve removed 1 rows and 32 columns
 Presolve time: 0.00s
-Presolve: All rows and columns removed
+Presolved: 2 rows, 18 columns, 36 nonzeros
+Found heuristic solution: objective 967.0000000
+Variable types: 0 continuous, 18 integer (16 binary)
 
-Explored 0 nodes (0 simplex iterations) in 0.00 seconds
-Thread count was 1 (of 8 available processors)
+Root relaxation: objective 9.980000e+02, 1 iterations, 0.00 seconds
 
-Solution count 2: 226 108 
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  998.00000    0    1  967.00000  998.00000  3.21%     -    0s
+H    0     0                     969.0000000  998.00000  2.99%     -    0s
+     0     0     cutoff    0       969.00000  969.00000  0.00%     -    0s
+
+Cutting planes:
+  Clique: 1
+  MIR: 1
+
+Explored 1 nodes (2 simplex iterations) in 0.01 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 969 967 211 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 2.260000000000e+02, best bound 2.260000000000e+02, gap 0.0000%
-allocate[cA,v7] 1.0
-allocate[cA,v8] 1.0
-num allocated users: 2
-social welfare: 226.0
-execution time: 0.005414009094238281
+Best objective 9.690000000000e+02, best bound 9.690000000000e+02, gap 0.0000%
+v7, v8, v15, v24, v26, v37, v40, v41, v46, 
+num allocated users: 9
+social welfare: 969.0
+execution time: 0,009266376495361328
 prices-> None
