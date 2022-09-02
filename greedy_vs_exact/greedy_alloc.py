@@ -103,9 +103,9 @@ def pricing(winners, densities):
             winner.price = 0
         else:
             winner.price = densities[j-1][1]*winner.maxCoord
-
         printResults(winner, densities[j-1][1])
         i += 1
+        print("---------")
 
     return [{user.id: (user.bid, str(user.price).replace('.', ','))} for user in winners]
 
@@ -120,7 +120,7 @@ def printResults(winner, criticalValue):
     print('winner price->', winner.price)
 
 def main():
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vGama/clA.json'
+    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vDelta/clE/clE_10.json'
     data = readJSONData(jsonFilePath)
     cloudlet = buildCloudlet(data['Cloudlets'])
     userVms = buildUserVms(data['UserVMs'])

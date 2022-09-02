@@ -87,7 +87,7 @@ def cloudletGen(cloudletQtt):
             "c_RAM": 512 * 1024
           }
 
-    Cloudlets.append(clE)
+    Cloudlets.append(clA)
     
     return Cloudlets
 
@@ -119,7 +119,7 @@ def validateArgs(args):
 def main():
     # python data_gen.py <number of vms> <number of cloudlets> <output file path>
     args = sys.argv[1:]
-    random.seed(100)
+    random.seed(327)
     if validateArgs(args):
         build(args)
 

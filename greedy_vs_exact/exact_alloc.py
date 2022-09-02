@@ -83,7 +83,7 @@ def pricing():
     
 
 def main():    
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vGama/clE.json'    
+    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vDelta/clE/clE_10.json'    
     build(jsonFilePath)
 
 if __name__ == "__main__":
