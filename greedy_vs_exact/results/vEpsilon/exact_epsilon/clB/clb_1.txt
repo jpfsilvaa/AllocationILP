@@ -1,0 +1,29 @@
+Academic license - for non-commercial use only - expires 2023-03-23
+Using license file /home/jps/gurobi.lic
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 3 rows, 10 columns and 30 nonzeros
+Model fingerprint: 0x05b9408a
+Variable types: 0 continuous, 10 integer (10 binary)
+Coefficient statistics:
+  Matrix range     [3e+03, 7e+04]
+  Objective range  [9e+01, 2e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+04, 5e+05]
+Found heuristic solution: objective 180.0000000
+Presolve removed 3 rows and 10 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 335 180 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.350000000000e+02, best bound 3.350000000000e+02, gap 0.0000%
+v5, v7, v8, 
+num allocated users: 3
+social welfare: 335.0
+execution time: 0,001348733901977539
+prices-> None
