@@ -38,6 +38,7 @@ def build(jsonFilePath):
     c_ids, c_storage, c_CPU, c_RAM = buildCloudletsDict(data['Cloudlets'])
 
     m = Model('Cloudlet-VM Allocation')
+    m.Params.LogToConsole = 0
     x = m.addVars(c_ids, v_ids, vtype=GRB.BINARY, name="allocate")
 
     # storage constraint
@@ -68,19 +69,43 @@ def build(jsonFilePath):
     startTime = time.time()
     m.optimize()
     endTime = time.time()
-    optResult = getResult()
+    optResult = getResult(m, c_ids, v_ids)
     printSolution(m)
-    print('execution time:', str(endTime-startTime).replace('.', ','))
-    print('prices->', pricing())
+    prices = pricing(m, m.ObjVal, optResult, v_bid, v_ids)
+    print('total price->', prices[1])
+    print('prices->', prices[0])
+    print('allocation execution time:', str(endTime-startTime).replace('.', ','))
+    
 
-def getResult():
+def getResult(model, cloudlets, vms):
     ILPResult = dict()
+    for cl in cloudlets:
+        for vm in vms:
+            if abs(model.getVarByName(f"allocate[{cl},{vm}]").x) > 1e-6:
+                ILPResult[vm] = cl
+    return ILPResult
     
 
-def pricing():
-    socialWelfareValue = 0
-    clarkeValue = 0
-    
+def pricing(model, optValue, optResult, v_bids, v_ids):
+    totalPrices = 0
+    userPrice = dict()
+    for vm in v_ids:
+        if vm in optResult.keys():
+            socialWelfare = optValue - v_bids[vm]
+            clarkeValue = clarkePivotRule(model, vm, optResult[vm])
+            priceToPay = clarkeValue - socialWelfare
+            userPrice[vm] = priceToPay
+            totalPrices += priceToPay
+        else:
+            userPrice[vm] = 0
+    return [userPrice, totalPrices]
+
+def clarkePivotRule(model, vm, cloudlet):
+    model.getVarByName(f"allocate[{cloudlet},{vm}]").ub = 0
+    model.optimize()
+    clarkeResult = model.ObjVal
+    model.getVarByName(f"allocate[{cloudlet},{vm}]").ub = 1
+    return clarkeResult
 
 def main():    
     jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vEpsilon/clE/cle_10.json'    
