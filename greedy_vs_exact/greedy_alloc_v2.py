@@ -50,7 +50,7 @@ def allocate(user, occupation):
     occupation.ram += user.coords.ram
     occupation.storage += user.coords.storage
 
-def isEmpty(occupation):
+def isNotFull(occupation):
     return (occupation.cpu <= 1 and occupation.ram <= 1 
             and occupation.storage <= 1)
 
@@ -64,8 +64,7 @@ def greedyAlloc(cloudlet, vms):
     socialWelfare = 0
     userPointer = 0
 
-    # eu poderia usar a norma do vetor aqui, para ficar mais legivel?
-    while (not isEmpty(occupation)) and userPointer < len(D):
+    while (isNotFull(occupation)) and userPointer < len(D):
         chosenUser = D[userPointer][0]
         if userFits(chosenUser, occupation):
             allocate(chosenUser, occupation)
@@ -135,7 +134,6 @@ def printResults(winner, criticalValue):
     print('winner price->', winner.price)
 
 def main(jsonFilePath):
-    # jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vEpsilon/clE/cle_10.json'
     data = readJSONData(jsonFilePath)
     cloudlet = buildCloudlet(data['Cloudlets'])
     userVms = buildUserVms(data['UserVMs'])
