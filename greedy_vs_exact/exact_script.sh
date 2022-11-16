@@ -6,6 +6,6 @@ do
     for j in {11..30}
     do
         inFile=/home/jps/allocation_models/greedy_vs_exact/instances/vEpsilon/cl${cTypesU[i]}/cl${cTypesL[i]}_${j}.json
-        python3 greedy_alloc.py ${inFile} > /home/jps/allocation_models/greedy_vs_exact/results/vEpsilon/greedy_epsilon/cl${cTypesU[i]}/cl${cTypesL[i]}_${j}.txt
+        python3 exact_alloc.py ${inFile} > /home/jps/allocation_models/greedy_vs_exact/results/vEpsilon/exact_epsilon_wPrice/cl${cTypesU[i]}/cl${cTypesL[i]}_${j}.txt
     done
 done

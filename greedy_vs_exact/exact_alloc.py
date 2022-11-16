@@ -107,9 +107,9 @@ def clarkePivotRule(model, vm, cloudlet):
     model.getVarByName(f"allocate[{cloudlet},{vm}]").ub = 1
     return clarkeResult
 
-def main():    
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vEpsilon/clE/cle_10.json'    
+def main(jsonFilePath):    
     build(jsonFilePath)
 
 if __name__ == "__main__":
-    main()
+    inputFilePath = sys.argv[1:][0]
+    main(inputFilePath)
