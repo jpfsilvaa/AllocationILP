@@ -1,5 +1,6 @@
 import json, math
 import time
+import sys
 
 class Coordinates:
     def __init__(self, cpu, ram, storage):
@@ -133,8 +134,8 @@ def printResults(winner, criticalValue):
     print('winner maxCoord (w_i)->', winner.maxCoord)
     print('winner price->', winner.price)
 
-def main():
-    jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vEpsilon/clE/cle_10.json'
+def main(jsonFilePath):
+    # jsonFilePath = '/home/jps/allocation_models/greedy_vs_exact/instances/vEpsilon/clE/cle_10.json'
     data = readJSONData(jsonFilePath)
     cloudlet = buildCloudlet(data['Cloudlets'])
     userVms = buildUserVms(data['UserVMs'])
@@ -147,4 +148,5 @@ def main():
     print('\nprices (user: (bid, price)) : ', pricing(winners=result[1], densities=result[2]))
 
 if __name__ == "__main__":
-    main()
+    inputFilePath = sys.argv[1:][0]
+    main(inputFilePath)

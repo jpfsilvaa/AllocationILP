@@ -95,6 +95,7 @@ def build(args):
     vmsArg = int(args[0])
     cloudletsArg = int(args[1])
     outFilePath = args[2]
+    random.seed(args[3])
 
     cloudlets = cloudletGen(cloudletsArg)
     mainObject = {
@@ -117,7 +118,7 @@ def validateArgs(args):
         return False
 
 def main():
-    # python data_gen.py <number of vms> <number of cloudlets> <output file path>
+    # python data_gen.py <number of vms> <number of cloudlets> <output file path> <seed>
     args = sys.argv[1:]
     """ 
     MUDAR: CLOUDLET CONFIGURADA + NUMERO DE CLOUDLET
@@ -130,8 +131,30 @@ def main():
     549
     633
     798
-    327 """
-    random.seed(327)
+    327 
+    
+    109-
+    127-
+    158-
+    218-
+    227-
+    241-
+    374-
+    489-
+    531-
+    543
+    564
+    615
+    686
+    688
+    708
+    791
+    794
+    807
+    814
+    943
+    """
+
     if validateArgs(args):
         build(args)
 

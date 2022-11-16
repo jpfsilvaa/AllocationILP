@@ -1,0 +1,92 @@
+{
+    "UserVMs": [
+        {
+            "id": "v0",
+            "vmType": "gp2",
+            "bid": 110,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v1",
+            "vmType": "gp2",
+            "bid": 92,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v2",
+            "vmType": "cpuInt",
+            "bid": 214,
+            "v_storage": 16384,
+            "v_CPU": 32000,
+            "v_RAM": 32768
+        },
+        {
+            "id": "v3",
+            "vmType": "ramInt",
+            "bid": 212,
+            "v_storage": 16384,
+            "v_CPU": 16000,
+            "v_RAM": 65536
+        },
+        {
+            "id": "v4",
+            "vmType": "cpuInt",
+            "bid": 181,
+            "v_storage": 16384,
+            "v_CPU": 32000,
+            "v_RAM": 32768
+        },
+        {
+            "id": "v5",
+            "vmType": "gp2",
+            "bid": 82,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v6",
+            "vmType": "cpuInt",
+            "bid": 188,
+            "v_storage": 16384,
+            "v_CPU": 32000,
+            "v_RAM": 32768
+        },
+        {
+            "id": "v7",
+            "vmType": "gp1",
+            "bid": 90,
+            "v_storage": 3072,
+            "v_CPU": 4000,
+            "v_RAM": 4096
+        },
+        {
+            "id": "v8",
+            "vmType": "gp2",
+            "bid": 85,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v9",
+            "vmType": "gp2",
+            "bid": 87,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        }
+    ],
+    "Cloudlets": [
+        {
+            "id": "cB",
+            "c_storage": 512000,
+            "c_CPU": 32000,
+            "c_RAM": 32768
+        }
+    ]
+}

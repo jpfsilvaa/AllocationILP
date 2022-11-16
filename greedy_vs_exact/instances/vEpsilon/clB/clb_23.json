@@ -1,0 +1,92 @@
+{
+    "UserVMs": [
+        {
+            "id": "v0",
+            "vmType": "gp1",
+            "bid": 88,
+            "v_storage": 3072,
+            "v_CPU": 4000,
+            "v_RAM": 4096
+        },
+        {
+            "id": "v1",
+            "vmType": "gp2",
+            "bid": 98,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v2",
+            "vmType": "gp2",
+            "bid": 86,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v3",
+            "vmType": "gp2",
+            "bid": 91,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v4",
+            "vmType": "cpuInt",
+            "bid": 206,
+            "v_storage": 16384,
+            "v_CPU": 32000,
+            "v_RAM": 32768
+        },
+        {
+            "id": "v5",
+            "vmType": "gp2",
+            "bid": 89,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v6",
+            "vmType": "cpuInt",
+            "bid": 198,
+            "v_storage": 16384,
+            "v_CPU": 32000,
+            "v_RAM": 32768
+        },
+        {
+            "id": "v7",
+            "vmType": "cpuInt",
+            "bid": 213,
+            "v_storage": 16384,
+            "v_CPU": 32000,
+            "v_RAM": 32768
+        },
+        {
+            "id": "v8",
+            "vmType": "cpuInt",
+            "bid": 197,
+            "v_storage": 16384,
+            "v_CPU": 32000,
+            "v_RAM": 32768
+        },
+        {
+            "id": "v9",
+            "vmType": "gp2",
+            "bid": 80,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        }
+    ],
+    "Cloudlets": [
+        {
+            "id": "cB",
+            "c_storage": 512000,
+            "c_CPU": 32000,
+            "c_RAM": 32768
+        }
+    ]
+}

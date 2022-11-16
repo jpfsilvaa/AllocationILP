@@ -1,0 +1,52 @@
+{
+    "UserVMs": [
+        {
+            "id": "v0",
+            "vmType": "ramInt",
+            "bid": 211,
+            "v_storage": 16384,
+            "v_CPU": 16000,
+            "v_RAM": 65536
+        },
+        {
+            "id": "v1",
+            "vmType": "gp1",
+            "bid": 107,
+            "v_storage": 3072,
+            "v_CPU": 4000,
+            "v_RAM": 4096
+        },
+        {
+            "id": "v2",
+            "vmType": "ramInt",
+            "bid": 211,
+            "v_storage": 16384,
+            "v_CPU": 16000,
+            "v_RAM": 65536
+        },
+        {
+            "id": "v3",
+            "vmType": "gp2",
+            "bid": 88,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v4",
+            "vmType": "gp1",
+            "bid": 85,
+            "v_storage": 3072,
+            "v_CPU": 4000,
+            "v_RAM": 4096
+        }
+    ],
+    "Cloudlets": [
+        {
+            "id": "cA",
+            "c_storage": 256000,
+            "c_CPU": 24000,
+            "c_RAM": 16384
+        }
+    ]
+}
