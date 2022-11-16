@@ -39,6 +39,20 @@ def calcDensities(vms):
     
     return dens
 
+def userFits(user, occupation):
+    return (user.coords.cpu + occupation.cpu <= 1
+            and user.coords.ram + occupation.ram <= 1 
+            and user.coords.storage + occupation.storage <= 1)
+
+def allocate(user, occupation):
+    occupation.cpu += user.coords.cpu
+    occupation.ram += user.coords.ram
+    occupation.storage += user.coords.storage
+
+def isEmpty(occupation):
+    return (occupation.cpu <= 1 and occupation.ram <= 1 
+            and occupation.storage <= 1)
+
 def greedyAlloc(cloudlet, vms):
     normalVms = normalize(cloudlet, vms)
     D = calcDensities(normalVms)
@@ -50,15 +64,10 @@ def greedyAlloc(cloudlet, vms):
     userPointer = 0
 
     # eu poderia usar a norma do vetor aqui, para ficar mais legivel?
-    while (occupation.cpu <= 1 and occupation.ram <= 1 
-            and occupation.storage <= 1) and userPointer < len(D):
+    while (not isEmpty(occupation)) and userPointer < len(D):
         chosenUser = D[userPointer][0]
-        if (chosenUser.coords.cpu + occupation.cpu <= 1
-            and chosenUser.coords.ram + occupation.ram <= 1 
-            and chosenUser.coords.storage + occupation.storage <= 1):
-            occupation.cpu += chosenUser.coords.cpu
-            occupation.ram += chosenUser.coords.ram
-            occupation.storage += chosenUser.coords.storage
+        if userFits(chosenUser, occupation):
+            allocate(chosenUser, occupation)
             allocatedUsers.append(chosenUser)
             socialWelfare += chosenUser.bid
         userPointer += 1
@@ -101,16 +110,9 @@ def pricing(winners, densities):
         occupation = Coordinates(0, 0, 0)
         winner = winners[i]
         j = 0
-        while (winner.coords.cpu + occupation.cpu <= 1
-            and winner.coords.ram + occupation.ram <= 1 
-            and winner.coords.storage + occupation.storage <= 1) and j < len(densities):
-                if (densities[j][0].id != winner.id 
-                    and densities[j][0].coords.cpu + occupation.cpu <= 1
-                    and densities[j][0].coords.ram + occupation.ram <= 1 
-                    and densities[j][0].coords.storage + occupation.storage <= 1):
-                        occupation.cpu += densities[j][0].coords.cpu
-                        occupation.ram += densities[j][0].coords.ram
-                        occupation.storage += densities[j][0].coords.storage
+        while userFits(winner, occupation) and j < len(densities):
+                if densities[j][0].id != winner.id and userFits(densities[j][0], occupation):
+                        allocate(densities[j][0], occupation)
                 j += 1
         if j == len(densities):
             winner.price = 0
