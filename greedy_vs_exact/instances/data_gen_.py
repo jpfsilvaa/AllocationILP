@@ -7,7 +7,6 @@ def vmGen(vmsQtt):
     VMs = []
     # units: storage(MB), cpu(MIPS), RAM(MB)
     simMIPS = 2000
-
     for i in range(0, vmsQtt):
         chosenVMType = random.randint(0, 3)
         chosenVm = {}
@@ -15,7 +14,7 @@ def vmGen(vmsQtt):
             chosenVm = {
                 "id": f'v{i}', 
                 "vmType": 'gp1',
-                "bid": random.randint(80, 120),
+                "bid": random.randint(800, 1200),
                 "v_storage": 3 * 1024, 
                 "v_CPU": 2 * simMIPS, 
                 "v_RAM": 4 * 1024
@@ -24,7 +23,7 @@ def vmGen(vmsQtt):
             chosenVm = {  
                 "id": f'v{i}',  
                 "vmType": 'gp2',
-                "bid": random.randint(80, 120),
+                "bid": random.randint(800, 1200),
                 "v_storage": 16 * 1024, 
                 "v_CPU": 4 * simMIPS, 
                 "v_RAM": 16 * 1024
@@ -33,7 +32,7 @@ def vmGen(vmsQtt):
             chosenVm = {
                 "id": f'v{i}',
                 "vmType": 'ramInt',
-                "bid": random.randint(180, 220),
+                "bid": random.randint(1800, 2200),
                 "v_storage": 16 * 1024, 
                 "v_CPU": 8 * simMIPS, 
                 "v_RAM": 64 * 1024
@@ -42,15 +41,37 @@ def vmGen(vmsQtt):
             chosenVm = {
                 "id": f'v{i}', 
                 "vmType": 'cpuInt',
-                "bid": random.randint(180, 220),
+                "bid": random.randint(1800, 2200),
                 "v_storage": 16 * 1024, 
                 "v_CPU": 16 * simMIPS, 
                 "v_RAM": 32 * 1024
             }
         
         VMs.append(chosenVm)
-    
     return VMs
+
+"""     for i in range(int(0.1*vmsQtt)):
+        chosenVm = {
+                "id": f'v{i}', 
+                "vmType": 'gp1',
+                "bid": random.randint(800, 1200),
+                "v_storage": 3 * 1024, 
+                "v_CPU": 2 * simMIPS, 
+                "v_RAM": 4 * 1024
+            }
+        VMs.append(chosenVm)
+    
+    for j in range(3, 3+int(0.9*vmsQtt)):
+        chosenVm = {  
+                "id": f'v{j}',  
+                "vmType": 'gp2',
+                "bid": random.randint(800, 1200),
+                "v_storage": 16 * 1024, 
+                "v_CPU": 4 * simMIPS, 
+                "v_RAM": 16 * 1024
+            }
+        VMs.append(chosenVm)
+    return VMs """
 
 def cloudletGen(cloudletQtt):
     Cloudlets = []
@@ -88,7 +109,6 @@ def cloudletGen(cloudletQtt):
           }
 
     Cloudlets.append(clE)
-    
     return Cloudlets
 
 def build(args):
@@ -120,41 +140,6 @@ def validateArgs(args):
 def main():
     # python data_gen.py <number of vms> <number of cloudlets> <output file path> <seed>
     args = sys.argv[1:]
-    """ 
-    MUDAR: CLOUDLET CONFIGURADA + NUMERO DE CLOUDLET
-    173
-    978
-    659
-    293
-    176
-    392
-    549
-    633
-    798
-    327 
-    
-    109
-    127
-    158
-    218
-    227
-    241
-    374
-    489
-    531
-    543
-    564
-    615
-    686
-    688
-    708
-    791
-    794
-    807
-    814
-    943
-    """
-
     if validateArgs(args):
         build(args)
 
