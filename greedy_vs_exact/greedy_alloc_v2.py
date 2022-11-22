@@ -73,7 +73,7 @@ def greedyAlloc(cloudlet, vms):
         userPointer += 1
     
     print('num allocated users:', len(allocatedUsers))
-    print('allocated users:', [user.id for user in allocatedUsers])
+    print('allocated users:', [(user.id, user.vmType) for user in allocatedUsers])
     return [socialWelfare, allocatedUsers, D]
 
 def readJSONData(jsonFilePath):

@@ -11,7 +11,7 @@ def readJSONData(jsonFilePath):
 
 def buildVMsDict(vmsJsonData):
     return multidict(
-        (vm['id'], [vm['bid'], vm['v_storage'], vm['v_CPU'], vm['v_RAM']])
+        (vm['id'], [vm['vmType'], vm['bid'], vm['v_storage'], vm['v_CPU'], vm['v_RAM']])
             for vm in vmsJsonData
     )
 
@@ -22,19 +22,18 @@ def buildCloudletsDict(cloudletsJsonData):
     )
 
 # Display optimal values of decision variables
-def printSolution(modelOpt):
+def printSolution(modelOpt, optResult, v_types):
     numAlloc = 0
-    for v in modelOpt.getVars():
-        if (abs(v.x) > 1e-6):
-            numAlloc += 1
-            print(str(v.varName)[-4:-1].replace(',', ''), end=', ')
-    print("\nnum allocated users:", numAlloc)
+    print('allocated users: ', end='')
+    for v in optResult.keys():
+        print((v, v_types[v]), end=', ')
+    print("\nnum allocated users:", len(optResult.keys()))
     print("social welfare:", modelOpt.objVal)
 
 def build(jsonFilePath):
     data = readJSONData(jsonFilePath)
 
-    v_ids, v_bid, v_storage, v_CPU, v_RAM = buildVMsDict(data['UserVMs'])
+    v_ids, v_types, v_bid, v_storage, v_CPU, v_RAM = buildVMsDict(data['UserVMs'])
     c_ids, c_storage, c_CPU, c_RAM = buildCloudletsDict(data['Cloudlets'])
 
     m = Model('Cloudlet-VM Allocation')
@@ -70,7 +69,7 @@ def build(jsonFilePath):
     m.optimize()
     endTime = time.time()
     optResult = getResult(m, c_ids, v_ids)
-    printSolution(m)
+    printSolution(m, optResult, v_types)
     prices = pricing(m, m.ObjVal, optResult, v_bid, v_ids)
     print('total price->', prices[1])
     print('prices->', prices[0])
