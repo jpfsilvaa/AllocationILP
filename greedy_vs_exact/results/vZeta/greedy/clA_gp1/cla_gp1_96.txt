@@ -1,0 +1,38 @@
+num allocated users: 4
+allocated users: [('v15', 'gp1'), ('v26', 'gp1'), ('v21', 'gp1'), ('v10', 'gp1')]
+social welfare: 4711
+execution time: 0,00018525123596191406
+-----------
+user id -> v15
+vmType -> gp1
+critical value (b_j/w_j)-> 4596.0
+winner density (b_i/w_i)-> 4776.0
+winner bid (b_i)-> 1194
+winner maxCoord (w_i)-> 0.25
+winner price-> 1149.0
+-----------
+user id -> v26
+vmType -> gp1
+critical value (b_j/w_j)-> 4596.0
+winner density (b_i/w_i)-> 4768.0
+winner bid (b_i)-> 1192
+winner maxCoord (w_i)-> 0.25
+winner price-> 1149.0
+-----------
+user id -> v21
+vmType -> gp1
+critical value (b_j/w_j)-> 4596.0
+winner density (b_i/w_i)-> 4688.0
+winner bid (b_i)-> 1172
+winner maxCoord (w_i)-> 0.25
+winner price-> 1149.0
+-----------
+user id -> v10
+vmType -> gp1
+critical value (b_j/w_j)-> 4596.0
+winner density (b_i/w_i)-> 4612.0
+winner bid (b_i)-> 1153
+winner maxCoord (w_i)-> 0.25
+winner price-> 1149.0
+
+prices (user: (bid, price)) :  [{'v15': (1194, '1149,0')}, {'v26': (1192, '1149,0')}, {'v21': (1172, '1149,0')}, {'v10': (1153, '1149,0')}]
