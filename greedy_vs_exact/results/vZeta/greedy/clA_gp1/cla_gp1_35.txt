@@ -1,38 +1,38 @@
 num allocated users: 4
-allocated users: [('v28', 'gp1'), ('v27', 'gp1'), ('v17', 'gp1'), ('v3', 'gp1')]
-social welfare: 4699
-execution time: 0,00017952919006347656
+allocated users: [('v4', 'gp1'), ('v11', 'gp1'), ('v14', 'gp1'), ('v20', 'gp1')]
+social welfare: 404
+execution time: 0,00013875961303710938
 -----------
-user id -> v28
+user id -> v4
 vmType -> gp1
-critical value (b_j/w_j)-> 4560.0
-winner density (b_i/w_i)-> 4744.0
-winner bid (b_i)-> 1186
+critical value (b_j/w_j)-> 404.0
+winner density (b_i/w_i)-> 404.0
+winner bid (b_i)-> 101
 winner maxCoord (w_i)-> 0.25
-winner price-> 1140.0
+winner price-> 101.0
 -----------
-user id -> v27
+user id -> v11
 vmType -> gp1
-critical value (b_j/w_j)-> 4560.0
-winner density (b_i/w_i)-> 4712.0
-winner bid (b_i)-> 1178
+critical value (b_j/w_j)-> 404.0
+winner density (b_i/w_i)-> 404.0
+winner bid (b_i)-> 101
 winner maxCoord (w_i)-> 0.25
-winner price-> 1140.0
+winner price-> 101.0
 -----------
-user id -> v17
+user id -> v14
 vmType -> gp1
-critical value (b_j/w_j)-> 4560.0
-winner density (b_i/w_i)-> 4696.0
-winner bid (b_i)-> 1174
+critical value (b_j/w_j)-> 404.0
+winner density (b_i/w_i)-> 404.0
+winner bid (b_i)-> 101
 winner maxCoord (w_i)-> 0.25
-winner price-> 1140.0
+winner price-> 101.0
 -----------
-user id -> v3
+user id -> v20
 vmType -> gp1
-critical value (b_j/w_j)-> 4560.0
-winner density (b_i/w_i)-> 4644.0
-winner bid (b_i)-> 1161
+critical value (b_j/w_j)-> 404.0
+winner density (b_i/w_i)-> 404.0
+winner bid (b_i)-> 101
 winner maxCoord (w_i)-> 0.25
-winner price-> 1140.0
+winner price-> 101.0
 
-prices (user: (bid, price)) :  [{'v28': (1186, '1140,0')}, {'v27': (1178, '1140,0')}, {'v17': (1174, '1140,0')}, {'v3': (1161, '1140,0')}]
+prices (user: (bid, price)) :  [{'v4': (101, '101,0')}, {'v11': (101, '101,0')}, {'v14': (101, '101,0')}, {'v20': (101, '101,0')}]
