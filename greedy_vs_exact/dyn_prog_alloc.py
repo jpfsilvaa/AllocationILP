@@ -75,7 +75,7 @@ def dynProgAlloc(cloudlet, userVms):
     CLOUDLET_CPU = int(cloudlet.coords.cpu/CPU_UNIT)+1
     CLOUDLET_RAM = int(cloudlet.coords.ram/GB_UNIT)+1
     CLOUDLET_STORAGE = int(cloudlet.coords.storage/GB_UNIT)+1
-    print()
+    userVms.insert(0, UserVM('', '', 0, Coordinates(0, 0, 0))) # adding 'empty' user in the first position of the list for the algorithm
 
     T = np.full((len(userVms)+1, 
                     CLOUDLET_CPU, 
@@ -92,11 +92,7 @@ def dynProgAlloc(cloudlet, userVms):
                     if (userCPU <= j 
                         and userRAM <= k 
                         and userSTORAGE <= l):
-                            if i == 0:
-                                T[i][j][k][l] = max(T[0][j][k][l],
-                                                T[0][j-userCPU][k-userRAM][l-userSTORAGE]+userVms[i].bid)
-                            else:
-                                T[i][j][k][l] = max(T[i-1][j][k][l],
+                        T[i][j][k][l] = max(T[i-1][j][k][l],
                                                 T[i-1][j-userCPU][k-userRAM][l-userSTORAGE]+userVms[i].bid)
                     else:
                         T[i][j][k][l] = T[i-1][j][k][l]
@@ -106,12 +102,7 @@ def dynProgAlloc(cloudlet, userVms):
     alpha = CLOUDLET_CPU-1 # descreasing 1 for acessing the array values
     beta = CLOUDLET_RAM-1
     gama = CLOUDLET_STORAGE-1
-    for i in range(len(userVms)-1, -1, -1):
-        if i == 18:
-            print('------')
-            print(userVms[i].id)
-            print(T[i-1, alpha, beta, gama], T[i, alpha, beta, gama])
-            print('------')
+    for i in range(len(userVms)-1, 0, -1):
         if T[i-1, alpha, beta, gama] != T[i, alpha, beta, gama]:
             S.append(userVms[i])
             socialWelfare += userVms[i].bid
@@ -121,10 +112,17 @@ def dynProgAlloc(cloudlet, userVms):
     
     print('num allocated users:', len(S))
     print('allocated users:', [(user.id, user.vmType) for user in S])
-    normalVms = normalize(cloudlet, S)
+    
+    #preparing data for the pricing algorithm
+    normalWinners = normalize(cloudlet, S)
+    calcDensities(normalWinners) # this function update the maxCoord value of eah user
+
+    del userVms[0]
+    normalVms = normalize(cloudlet, userVms)
     D = calcDensities(normalVms)
     D.sort(key=lambda a: a[1], reverse=True)
-    return [socialWelfare, normalVms, D]
+
+    return [socialWelfare, normalWinners, D]
 
 def userFits(user, occupation):
     return (user.coords.cpu + occupation.cpu <= 1

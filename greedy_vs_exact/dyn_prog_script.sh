@@ -8,6 +8,6 @@ do
     for j in {0..99}
     do
         inFile=/home/jps/allocation_models/greedy_vs_exact/instances/vZeta/cl${cTypes_u[i]}/cl${cTypes_l[i]}_${j}.json
-        python3 dyn_prog_alloc.py ${inFile} > /home/jps/allocation_models/greedy_vs_exact/results/vZeta/dynamic_programming/cl${cTypes_u[i]}/cl${cTypes_l[i]}_${j}.txt
+        python3 dyn_prog_alloc.py ${inFile} > /home/jps/allocation_models/greedy_vs_exact/results/vZeta/dyn_prog/cl${cTypes_u[i]}/cl${cTypes_l[i]}_${j}.txt
     done
 done
