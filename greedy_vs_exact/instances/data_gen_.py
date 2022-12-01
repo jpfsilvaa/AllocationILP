@@ -8,25 +8,44 @@ def vmGen(vmsQtt):
     # units: storage(MB), cpu(MIPS), RAM(MB)
     simMIPS = 2000
 
-    for i in range(int(0.1*vmsQtt)):
-        chosenVm = {
+    for i in range(0, vmsQtt):
+        chosenVMType = random.randint(0, 3)
+        chosenVm = {}
+        if chosenVMType == 0:
+            chosenVm = {
                 "id": f'v{i}', 
                 "vmType": 'gp1',
-                "bid": int(random.gauss(100, 1)),
+                "bid": random.gauss(100, 3),
                 "v_storage": 3 * 1024, 
                 "v_CPU": 2 * simMIPS, 
                 "v_RAM": 4 * 1024
             }
-        VMs.append(chosenVm)
-    
-    for j in range(3, 3+int(0.9*vmsQtt)):
-        chosenVm = {  
-                "id": f'v{j}',  
+        elif chosenVMType == 1:
+            chosenVm = {  
+                "id": f'v{i}',  
                 "vmType": 'gp2',
-                "bid": int(random.gauss(100, 1)),
+                "bid": random.gauss(100, 3),
                 "v_storage": 16 * 1024, 
                 "v_CPU": 4 * simMIPS, 
                 "v_RAM": 16 * 1024
+            }
+        elif chosenVMType == 2:
+            chosenVm = {
+                "id": f'v{i}',
+                "vmType": 'ramInt',
+                "bid": random.gauss(100, 3),
+                "v_storage": 16 * 1024, 
+                "v_CPU": 8 * simMIPS, 
+                "v_RAM": 64 * 1024
+            }
+        elif chosenVMType == 3:
+            chosenVm = {
+                "id": f'v{i}', 
+                "vmType": 'cpuInt',
+                "bid": random.gauss(100, 3),
+                "v_storage": 16 * 1024, 
+                "v_CPU": 16 * simMIPS, 
+                "v_RAM": 32 * 1024
             }
         VMs.append(chosenVm)
     return VMs

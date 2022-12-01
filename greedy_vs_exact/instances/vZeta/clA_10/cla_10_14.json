@@ -1,0 +1,92 @@
+{
+    "UserVMs": [
+        {
+            "id": "v0",
+            "vmType": "gp1",
+            "bid": 113,
+            "v_storage": 3072,
+            "v_CPU": 4000,
+            "v_RAM": 4096
+        },
+        {
+            "id": "v1",
+            "vmType": "gp1",
+            "bid": 101,
+            "v_storage": 3072,
+            "v_CPU": 4000,
+            "v_RAM": 4096
+        },
+        {
+            "id": "v2",
+            "vmType": "gp1",
+            "bid": 109,
+            "v_storage": 3072,
+            "v_CPU": 4000,
+            "v_RAM": 4096
+        },
+        {
+            "id": "v3",
+            "vmType": "gp1",
+            "bid": 99,
+            "v_storage": 3072,
+            "v_CPU": 4000,
+            "v_RAM": 4096
+        },
+        {
+            "id": "v4",
+            "vmType": "gp1",
+            "bid": 84,
+            "v_storage": 3072,
+            "v_CPU": 4000,
+            "v_RAM": 4096
+        },
+        {
+            "id": "v5",
+            "vmType": "gp2",
+            "bid": 114,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v6",
+            "vmType": "gp2",
+            "bid": 104,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v7",
+            "vmType": "gp2",
+            "bid": 91,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v8",
+            "vmType": "gp2",
+            "bid": 96,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        },
+        {
+            "id": "v9",
+            "vmType": "gp2",
+            "bid": 91,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        }
+    ],
+    "Cloudlets": [
+        {
+            "id": "cA",
+            "c_storage": 256000,
+            "c_CPU": 24000,
+            "c_RAM": 16384
+        }
+    ]
+}
