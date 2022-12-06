@@ -1,0 +1,28 @@
+{
+    "UserVMs": [
+        {
+            "id": "v0",
+            "vmType": "gp1",
+            "bid": 93,
+            "v_storage": 3072,
+            "v_CPU": 4000,
+            "v_RAM": 4096
+        },
+        {
+            "id": "v1",
+            "vmType": "gp2",
+            "bid": 110,
+            "v_storage": 16384,
+            "v_CPU": 8000,
+            "v_RAM": 16384
+        }
+    ],
+    "Cloudlets": [
+        {
+            "id": "cA",
+            "c_storage": 256000,
+            "c_CPU": 24000,
+            "c_RAM": 16384
+        }
+    ]
+}

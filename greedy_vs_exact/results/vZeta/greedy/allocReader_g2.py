@@ -1,7 +1,4 @@
-def readSW():
-    cTypes_u = ['A_gp1', 'A_mix', 'E_200']
-    cTypes_l = ['a_gp1', 'a_mix', 'e_200']
-
+def readSW(cTypes_u, cTypes_l):
     for i in range(len(cTypes_u)):
         for j in range(100):
             fileName = f'/home/jps/allocation_models/greedy_vs_exact/results/vZeta/greedy/cl{cTypes_u[i]}/cl{cTypes_l[i]}_{j}.txt'
@@ -13,10 +10,7 @@ def readSW():
         print(fileName)
         print('-----------')
 
-def readNumberVMs():
-    cTypes_u = ['A_gp1', 'A_mix', 'E_200']
-    cTypes_l = ['a_gp1', 'a_mix', 'e_200']
-
+def readNumberVMs(cTypes_u, cTypes_l):
     for i in range(len(cTypes_u)):
         for j in range (100):
             fileName = f'/home/jps/allocation_models/greedy_vs_exact/results/vZeta/greedy/cl{cTypes_u[i]}/cl{cTypes_l[i]}_{j}.txt'
@@ -28,10 +22,7 @@ def readNumberVMs():
         print(fileName)
         print('-----------')
 
-def readRunningTime():
-    cTypes_u = ['A_gp1', 'A_mix', 'E_200']
-    cTypes_l = ['a_gp1', 'a_mix', 'e_200']
-
+def readRunningTime(cTypes_u, cTypes_l):
     for i in range(len(cTypes_u)):
         for j in range (100):
             fileName = f'/home/jps/allocation_models/greedy_vs_exact/results/vZeta/greedy/cl{cTypes_u[i]}/cl{cTypes_l[i]}_{j}.txt'
@@ -43,10 +34,7 @@ def readRunningTime():
         print(fileName)
         print('-----------')
 
-def readAllocatedUsers():
-    cTypes_u = ['A_gp1', 'A_mix', 'E_200']
-    cTypes_l = ['a_gp1', 'a_mix', 'e_200']
-
+def readAllocatedUsers(cTypes_u, cTypes_l):
     for i in range(len(cTypes_u)):
         for j in range (100):
             fileName = f'/home/jps/allocation_models/greedy_vs_exact/results/vZeta/greedy/cl{cTypes_u[i]}/cl{cTypes_l[i]}_{j}.txt'
@@ -61,10 +49,12 @@ def readAllocatedUsers():
 
 
 def main():
-    readSW()
-    readNumberVMs()
-    readRunningTime()
-    readAllocatedUsers()
+    cTypes_u = ['A_2']
+    cTypes_l = ['a_2']
+    readSW(cTypes_u, cTypes_l)
+    readNumberVMs(cTypes_u, cTypes_l)
+    readRunningTime(cTypes_u, cTypes_l)
+    readAllocatedUsers(cTypes_u, cTypes_l)
 
 if __name__ == "__main__":
     main()

@@ -12,5 +12,5 @@ seeds=(173 978 659 293 176 392 549 633 798 327
 for i in {0..99}
 do
     fileNumber=$i
-    python3 data_gen_.py 30 1 /home/jps/allocation_models/greedy_vs_exact/instances/vZeta/clA_mix/cla_mix_${fileNumber}.json ${seeds[i]}
+    python3 data_gen_.py 2 1 /home/jps/allocation_models/greedy_vs_exact/instances/vZeta/clA_10_3/cla_10_3_${fileNumber}.json ${seeds[i]}
 done
