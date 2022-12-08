@@ -1,0 +1,62 @@
+num allocated users: 7
+allocated users: [('v0', 'gp1'), ('v6', 'gp1'), ('v8', 'gp1'), ('v4', 'gp1'), ('v2', 'gp1'), ('v1', 'ramInt'), ('v7', 'ramInt')]
+social welfare: 802
+execution time: 3,910064697265625e-05
+-----------
+user id -> v0
+vmType -> gp1
+critical value (b_j/w_j)-> 624.0
+winner density (b_i/w_i)-> 1664.0
+winner bid (b_i)-> 104
+winner maxCoord (w_i)-> 0.0625
+winner price-> 39.0
+-----------
+user id -> v6
+vmType -> gp1
+critical value (b_j/w_j)-> 624.0
+winner density (b_i/w_i)-> 1648.0
+winner bid (b_i)-> 103
+winner maxCoord (w_i)-> 0.0625
+winner price-> 39.0
+-----------
+user id -> v8
+vmType -> gp1
+critical value (b_j/w_j)-> 624.0
+winner density (b_i/w_i)-> 1616.0
+winner bid (b_i)-> 101
+winner maxCoord (w_i)-> 0.0625
+winner price-> 39.0
+-----------
+user id -> v4
+vmType -> gp1
+critical value (b_j/w_j)-> 624.0
+winner density (b_i/w_i)-> 1440.0
+winner bid (b_i)-> 90
+winner maxCoord (w_i)-> 0.0625
+winner price-> 39.0
+-----------
+user id -> v2
+vmType -> gp1
+critical value (b_j/w_j)-> 624.0
+winner density (b_i/w_i)-> 1360.0
+winner bid (b_i)-> 85
+winner maxCoord (w_i)-> 0.0625
+winner price-> 39.0
+-----------
+user id -> v1
+vmType -> ramInt
+critical value (b_j/w_j)-> 624.0
+winner density (b_i/w_i)-> 640.0
+winner bid (b_i)-> 160
+winner maxCoord (w_i)-> 0.25
+winner price-> 156.0
+-----------
+user id -> v7
+vmType -> ramInt
+critical value (b_j/w_j)-> 624.0
+winner density (b_i/w_i)-> 636.0
+winner bid (b_i)-> 159
+winner maxCoord (w_i)-> 0.25
+winner price-> 156.0
+
+prices (user: (bid, price)) :  [{'v0': (104, '39,0')}, {'v6': (103, '39,0')}, {'v8': (101, '39,0')}, {'v4': (90, '39,0')}, {'v2': (85, '39,0')}, {'v1': (160, '156,0')}, {'v7': (159, '156,0')}]

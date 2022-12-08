@@ -49,8 +49,8 @@ def readAllocatedUsers(cTypes_u, cTypes_l):
 
 
 def main():
-    cTypes_u = ['A_2']
-    cTypes_l = ['a_2']
+    cTypes_u = ['E_10']
+    cTypes_l = ['e_10']
     readSW(cTypes_u, cTypes_l)
     readNumberVMs(cTypes_u, cTypes_l)
     readRunningTime(cTypes_u, cTypes_l)

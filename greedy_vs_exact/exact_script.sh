@@ -6,7 +6,6 @@ cTypes_l=(a_gp1 a_mix e_200)
 
 for j in {0..99}
 do
-    #inFile=/home/jps/allocation_models/greedy_vs_exact/instances/vZeta/clA_10_3/cla_10_3_${j}.json
-    #python3 exact_alloc.py ${inFile} > /home/jps/allocation_models/greedy_vs_exact/results/vZeta/exact/clA_10_3/cla_10_3_${j}.txt
-    mv /home/jps/allocation_models/greedy_vs_exact/results/vZeta/exact/clA_2/cla_10_3_${j}.txt /home/jps/allocation_models/greedy_vs_exact/results/vZeta/exact/clA_2/cla_2_${j}.txt
+    inFile=/home/jps/allocation_models/greedy_vs_exact/instances/vZeta/clE_10/cle_10_${j}.json
+    python3 exact_alloc.py ${inFile} > /home/jps/allocation_models/greedy_vs_exact/results/vZeta/exact/clE_10/cle_10_${j}.txt
 done
