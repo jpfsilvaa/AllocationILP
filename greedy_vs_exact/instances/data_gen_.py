@@ -8,29 +8,31 @@ def vmGen(vmsQtt):
     # units: storage(MB), cpu(MIPS), RAM(MB)
     simMIPS = 2000
 
-    chosenVMType = 0
-    for i in range(vmsQtt):
+    chosenVMType = 2
+    for i in range(0, vmsQtt):
         chosenVm = {}
-        if chosenVMType == 0:
+        if chosenVMType == 2:
+            chosenVm = {
+                "id": f'v{i}',
+                "vmType": 'ramInt',
+                "bid": int(random.gauss(150, 10)),
+                "v_storage": 16 * 1024, 
+                "v_CPU": 8 * simMIPS, 
+                "v_RAM": 64 * 1024
+            }
+        elif chosenVMType == 3:
             chosenVm = {
                 "id": f'v{i}', 
-                "vmType": 'gp1',
-                "bid": int(random.gauss(100, 10)),
-                "v_storage": 3 * 1024, 
-                "v_CPU": 2 * simMIPS, 
-                "v_RAM": 4 * 1024
-            }
-        elif chosenVMType == 1:
-            chosenVm = {  
-                "id": f'v{i}',  
-                "vmType": 'gp2',
-                "bid": int(random.gauss(100, 10)),
+                "vmType": 'cpuInt',
+                "bid": int(random.gauss(150, 10)),
                 "v_storage": 16 * 1024, 
-                "v_CPU": 4 * simMIPS, 
-                "v_RAM": 16 * 1024
+                "v_CPU": 16 * simMIPS, 
+                "v_RAM": 32 * 1024
             }
-        if chosenVMType == 0: chosenVMType = 1 
+        if chosenVMType == 2: chosenVMType = 3
+        else: chosenVMType = 2
         VMs.append(chosenVm)
+    
     return VMs
 
 def cloudletGen(cloudletQtt):
@@ -68,7 +70,7 @@ def cloudletGen(cloudletQtt):
             "c_RAM": 512 * 1024
           }
 
-    Cloudlets.append(clA)
+    Cloudlets.append(clE)
     return Cloudlets
 
 def build(args):
