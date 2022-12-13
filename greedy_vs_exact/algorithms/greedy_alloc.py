@@ -1,48 +1,11 @@
 import json, math
 import time
 import sys
-
-class Coordinates:
-    def __init__(self, cpu, ram, storage):
-        self.cpu = cpu
-        self.ram = ram
-        self.storage = storage
-
-class User:
-    def __init__(self, id, vmType, bid, coords):
-        self.id = id
-        self.vmType = vmType
-        self.bid = bid
-        self.price = 0
-        self.maxCoord = 0
-        self.coords = coords
-
-class Cloudlet:
-    def __init__(self, id, coords):
-        self.id = id
-        self.coords = coords
-
-def normalize(cloudlet, vms):
-    normalized = []
-    for v in vms:
-        normalized.append(User(v.id, v.vmType, v.bid, Coordinates(
-            v.coords.cpu/cloudlet.coords.cpu,
-            v.coords.ram/cloudlet.coords.ram,
-            v.coords.storage/cloudlet.coords.storage
-        )))
-    return normalized
-
-def calcDensities(vms):
-    dens = []
-    for v in vms:
-        v.maxCoord = max(v.coords.cpu, v.coords.ram, v.coords.storage)
-        dens.append((v, v.bid/v.maxCoord))
-    
-    return dens
+import alloc_utils as utils
 
 def greedyAlloc(cloudlet, vms):
-    normalVms = normalize(cloudlet, vms)
-    D = calcDensities(normalVms)
+    normalVms = utils.normalize(cloudlet, vms)
+    D = utils.calcDensities(normalVms)
     D.sort(key=lambda a: a[1], reverse=True)
 
     occupation = 0
@@ -61,34 +24,6 @@ def greedyAlloc(cloudlet, vms):
     print('num allocated users:', len(allocatedUsers))
     print('allocated users:', [(user.id, user.vmType) for user in allocatedUsers])
     return [socialWelfare, allocatedUsers, D]
-
-def readJSONData(jsonFilePath):
-    jsonFile = open(jsonFilePath)
-    data = json.load(jsonFile)
-    jsonFile.close()
-    return data
-
-def buildCloudlet(jsonData):
-    cloudlets = []
-    for cloudlet in jsonData:
-        cloudlets.append(Cloudlet(cloudlet['id'], 
-                            Coordinates(int(cloudlet['c_CPU']), 
-                            int(cloudlet['c_RAM']),
-                            int(cloudlet['c_storage']))
-                            )
-                        )
-    return cloudlets[0]
-
-def buildUserVms(jsonData):
-    vmsList = []
-    for user in jsonData:
-        vmsList.append(User(user['id'], user['vmType'], int(user['bid']),
-                            Coordinates(int(user['v_CPU']), 
-                            int(user['v_RAM']),
-                            int(user['v_storage']))
-                            )
-                        )
-    return vmsList
 
 def pricing(winners, densities):
     i = 0
@@ -120,9 +55,9 @@ def printResults(winner, criticalValue):
     print('winner price->', winner.price)
 
 def main(jsonFilePath):
-    data = readJSONData(jsonFilePath)
-    cloudlet = buildCloudlet(data['Cloudlets'])
-    userVms = buildUserVms(data['UserVMs'])
+    data = utils.readJSONData(jsonFilePath)
+    cloudlet = utils.buildCloudlet(data['Cloudlets'])
+    userVms = utils.buildUserVms(data['UserVMs'])
     startTime = time.time()
     result = greedyAlloc(cloudlet, userVms)
     endTime = time.time()

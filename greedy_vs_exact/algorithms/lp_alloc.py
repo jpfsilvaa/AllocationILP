@@ -2,12 +2,7 @@ from gurobipy import *
 import sys
 import json
 import time
-
-def readJSONData(jsonFilePath):
-    jsonFile = open(jsonFilePath)
-    data = json.load(jsonFile)
-    jsonFile.close()
-    return data
+import alloc_utils as utils
 
 def buildVMsDict(vmsJsonData):
     return multidict(
@@ -31,7 +26,7 @@ def printSolution(modelOpt, optResult, v_types):
     print("social welfare:", modelOpt.objVal)
 
 def build(jsonFilePath):
-    data = readJSONData(jsonFilePath)
+    data = utils.readJSONData(jsonFilePath)
 
     v_ids, v_types, v_bid, v_storage, v_CPU, v_RAM = buildVMsDict(data['UserVMs'])
     c_ids, c_storage, c_CPU, c_RAM = buildCloudletsDict(data['Cloudlets'])
