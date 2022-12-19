@@ -8,7 +8,7 @@ def greedyAlloc(cloudlet, vms):
     D = utils.calcDensities(normalVms)
     D.sort(key=lambda a: a[1], reverse=True)
 
-    occupation = utils.Coordinates(0, 0, 0)
+    occupation = utils.Resources(0, 0, 0)
     allocatedUsers = []
     socialWelfare = 0
     userPointer = 0
@@ -28,7 +28,7 @@ def greedyAlloc(cloudlet, vms):
 def pricing(winners, densities):
     i = 0
     while i < len(winners):
-        occupation = utils.Coordinates(0, 0, 0)
+        occupation = utils.Resources(0, 0, 0)
         winner = winners[i]
         j = 0
         while utils.userFits(winner, occupation) and j < len(densities):
@@ -38,7 +38,7 @@ def pricing(winners, densities):
         if j == len(densities):
             winner.price = 0
         else:
-            winner.price = densities[j-1][1]*winner.maxCoord
+            winner.price = densities[j-1][1]*winner.maxReq
         printResults(winner, densities[j-1][1])
         i += 1
 
@@ -49,9 +49,9 @@ def printResults(winner, criticalValue):
     print('user id ->', winner.id)
     print('vmType ->', winner.vmType)
     print('critical value (b_j/w_j)->', criticalValue)
-    print('winner density (b_i/w_i)->', winner.bid/winner.maxCoord)
+    print('winner density (b_i/w_i)->', winner.bid/winner.maxReq)
     print('winner bid (b_i)->', winner.bid)
-    print('winner maxCoord (w_i)->', winner.maxCoord)
+    print('winner maxCoord (w_i)->', winner.maxReq)
     print('winner price->', winner.price)
 
 def main(jsonFilePath):

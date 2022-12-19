@@ -15,8 +15,8 @@ def greedyAlloc(cloudlet, vms):
 
     while occupation <= 1 and userPointer < len(D):
         chosenUser = D[userPointer][0]
-        if chosenUser.maxCoord + occupation <= 1:
-            occupation += chosenUser.maxCoord
+        if chosenUser.maxReq + occupation <= 1:
+            occupation += chosenUser.maxReq
             allocatedUsers.append(chosenUser)
             socialWelfare += chosenUser.bid
         userPointer += 1
@@ -31,14 +31,14 @@ def pricing(winners, densities):
         occupation = 0
         winner = winners[i]
         j = 0
-        while occupation + winner.maxCoord <= 1 and j < len(densities):
-            if densities[j][0].id != winner.id and occupation + densities[j][0].maxCoord <= 1:
-                occupation += densities[j][0].maxCoord
+        while occupation + winner.maxReq <= 1 and j < len(densities):
+            if densities[j][0].id != winner.id and occupation + densities[j][0].maxReq <= 1:
+                occupation += densities[j][0].maxReq
             j += 1
         if j == len(densities):
             winner.price = 0
         else:
-            winner.price = densities[j-1][1]*winner.maxCoord
+            winner.price = densities[j-1][1]*winner.maxReq
         printResults(winner, densities[j-1][1])
         i += 1
 
@@ -49,9 +49,9 @@ def printResults(winner, criticalValue):
     print('user id ->', winner.id)
     print('vmType ->', winner.vmType)
     print('critical value (b_j/w_j)->', criticalValue)
-    print('winner density (b_i/w_i)->', winner.bid/winner.maxCoord)
+    print('winner density (b_i/w_i)->', winner.bid/winner.maxReq)
     print('winner bid (b_i)->', winner.bid)
-    print('winner maxCoord (w_i)->', winner.maxCoord)
+    print('winner maxCoord (w_i)->', winner.maxReq)
     print('winner price->', winner.price)
 
 def main(jsonFilePath):

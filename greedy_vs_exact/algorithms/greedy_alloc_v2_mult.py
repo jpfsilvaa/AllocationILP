@@ -14,7 +14,7 @@ def greedyAlloc(cloudlets, vms):
 
     while cloudletPointer < len(cloudlets):
         userPointer = 0
-        occupation = utils.Coordinates(0, 0, 0)
+        occupation = utils.Resources(0, 0, 0)
 
         while (utils.isNotFull(occupation)) and userPointer < len(D):
             chosenUser = D[userPointer][0]
@@ -34,7 +34,7 @@ def greedyAlloc(cloudlets, vms):
 def pricing(winners, densities):
     i = 0
     while i < len(winners):
-        occupation = utils.Coordinates(0, 0, 0) # for identical cloudlets, this is ok, but not for different cloudlets
+        occupation = utils.Resources(0, 0, 0) # for identical cloudlets, this is ok, but not for different cloudlets
         winner = winners[i]
         j = 0
         while utils.userFits(winner, occupation) and j < len(densities):

@@ -26,7 +26,7 @@ def dynProgAlloc(cloudlet, userVms):
 
     normalizedVms = utils.normalize(cloudlet, userVms)
     P = sum(normalizedVms[i].bid for i in normalizedVms)
-    normalizedVms.insert(0, utils.UserVM('', '', 0, utils.Coordinates(0, 0, 0))) # adding 'empty' user in the first position of the list for the algorithm
+    normalizedVms.insert(0, utils.UserVM('', '', 0, utils.Resources(0, 0, 0))) # adding 'empty' user in the first position of the list for the algorithm
 
     T = np.full((len(normalizedVms)+1, 
                     P+1, 
@@ -39,16 +39,16 @@ def dynProgAlloc(cloudlet, userVms):
                     T[i][p][l] = T[i-1][p][l]
                 else:   
                     (alpha, beta, gama) = T[i-1][p][l]
-                    l_ = findLType(alpha + normalizedVms[i].coords.cpu,
-                            beta + normalizedVms[i].coords.ram,
-                            gama + normalizedVms[i].coords.storage)
-                    if (alpha + normalizedVms[i].coords.cpu <= CLOUDLET_CPU and
-                            beta + normalizedVms[i].coords.ram <= CLOUDLET_RAM and
-                            gama + normalizedVms[i].coords.storage <= CLOUDLET_STORAGE):
+                    l_ = findLType(alpha + normalizedVms[i].reqs.cpu,
+                            beta + normalizedVms[i].reqs.ram,
+                            gama + normalizedVms[i].reqs.storage)
+                    if (alpha + normalizedVms[i].reqs.cpu <= CLOUDLET_CPU and
+                            beta + normalizedVms[i].reqs.ram <= CLOUDLET_RAM and
+                            gama + normalizedVms[i].reqs.storage <= CLOUDLET_STORAGE):
                             T[i][p][l_] = min(T[i-1][p][l_], 
-                                                (alpha + normalizedVms[i].coords.cpu, 
-                                                beta + normalizedVms[i].coords.ram, 
-                                                gama + normalizedVms[i].coords.storage)) # TODO: HOW CAN I GET THE MININUM BETWEEN TRIPLETS?
+                                                (alpha + normalizedVms[i].reqs.cpu, 
+                                                beta + normalizedVms[i].reqs.ram, 
+                                                gama + normalizedVms[i].reqs.storage)) # TODO: HOW CAN I GET THE MININUM BETWEEN TRIPLETS?
     
     v_star = 0 # TODO: THE MAXIMUM VALUE P SUCH THAR T[n][v_star][l] <= (CLOUDLET_CPU, CLOUDLET_RAM, CLOUDLET_STORAGE) FOR l = 1 TO 6
     l = 0 # TODO: LET l BE THE STATE WHERE T[n][v_star][l] <= (CLOUDLET_CPU, CLOUDLET_RAM, CLOUDLET_STORAGE)
@@ -58,9 +58,9 @@ def dynProgAlloc(cloudlet, userVms):
         if T[i-1][v][l] != T[i][v][l]:
             S.append(userVms[i])
             ()
-            alpha -= int(userVms[i].coords.cpu/CPU_UNIT)
-            beta -= int(userVms[i].coords.ram/GB_UNIT)
-            gama -= int(userVms[i].coords.storage/GB_UNIT)
+            alpha -= int(userVms[i].reqs.cpu/CPU_UNIT)
+            beta -= int(userVms[i].reqs.ram/GB_UNIT)
+            gama -= int(userVms[i].reqs.storage/GB_UNIT)
     
     print('num allocated users:', len(S))
     print('allocated users:', [(user.id, user.vmType) for user in S])
@@ -89,7 +89,7 @@ def printResults(winner, criticalValue):
 def pricing(winners, densities):
     i = 0
     while i < len(winners):
-        occupation = utils.Coordinates(0, 0, 0)
+        occupation = utils.Resources(0, 0, 0)
         winner = winners[i]
         j = 0
         while utils.userFits(winner, occupation) and j < len(densities):

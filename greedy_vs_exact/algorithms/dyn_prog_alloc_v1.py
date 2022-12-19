@@ -10,7 +10,7 @@ def dynProgAlloc(cloudlet, userVms):
     CLOUDLET_CPU = int(cloudlet.coords.cpu/CPU_UNIT)+1
     CLOUDLET_RAM = int(cloudlet.coords.ram/GB_UNIT)+1
     CLOUDLET_STORAGE = int(cloudlet.coords.storage/GB_UNIT)+1
-    userVms.insert(0, utils.UserVM('', '', 0, utils.Coordinates(0, 0, 0))) # adding 'empty' user in the first position of the list for the algorithm
+    userVms.insert(0, utils.UserVM('', '', 0, utils.Resources(0, 0, 0))) # adding 'empty' user in the first position of the list for the algorithm
 
     T = np.full((len(userVms)+1, 
                     CLOUDLET_CPU, 
@@ -21,9 +21,9 @@ def dynProgAlloc(cloudlet, userVms):
         for j in range(CLOUDLET_CPU):
             for k in range(CLOUDLET_RAM):
                 for l in range(CLOUDLET_STORAGE):
-                    userCPU = int(userVms[i].coords.cpu/CPU_UNIT)
-                    userRAM = int(userVms[i].coords.ram/GB_UNIT)
-                    userSTORAGE = int(userVms[i].coords.storage/GB_UNIT)
+                    userCPU = int(userVms[i].reqs.cpu/CPU_UNIT)
+                    userRAM = int(userVms[i].reqs.ram/GB_UNIT)
+                    userSTORAGE = int(userVms[i].reqs.storage/GB_UNIT)
                     if (userCPU <= j 
                         and userRAM <= k 
                         and userSTORAGE <= l):
@@ -41,9 +41,9 @@ def dynProgAlloc(cloudlet, userVms):
         if T[i-1, alpha, beta, gama] != T[i, alpha, beta, gama]:
             S.append(userVms[i])
             socialWelfare += userVms[i].bid
-            alpha -= int(userVms[i].coords.cpu/CPU_UNIT)
-            beta -= int(userVms[i].coords.ram/GB_UNIT)
-            gama -= int(userVms[i].coords.storage/GB_UNIT)
+            alpha -= int(userVms[i].reqs.cpu/CPU_UNIT)
+            beta -= int(userVms[i].reqs.ram/GB_UNIT)
+            gama -= int(userVms[i].reqs.storage/GB_UNIT)
     
     print('num allocated users:', len(S))
     print('allocated users:', [(user.id, user.vmType) for user in S])
@@ -72,7 +72,7 @@ def printResults(winner, criticalValue):
 def pricing(winners, densities):
     i = 0
     while i < len(winners):
-        occupation = utils.Coordinates(0, 0, 0)
+        occupation = utils.Resources(0, 0, 0)
         winner = winners[i]
         j = 0
         while utils.userFits(winner, occupation) and j < len(densities):
