@@ -67,7 +67,7 @@ def buildCloudlet(jsonData):
                             int(cloudlet['c_storage']))
                             )
                         )
-    return cloudlets[0]
+    return cloudlets
 
 def buildUserVms(jsonData):
     vmsList = []
