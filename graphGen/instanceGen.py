@@ -39,6 +39,8 @@ def main(jsonFilePath):
         curr = mainGraph.getSubgraph(userRouteNodes)
         usersRoutes.append(curr)
 
+    # output: mainGraph, cloudlets, users, cloudletsSubgraph, usersRoutes
+
 if __name__ == '__main__':
     inputFilePath = sys.argv[1:][0]
     main(inputFilePath)
