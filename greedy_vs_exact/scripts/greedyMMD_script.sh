@@ -1,10 +1,10 @@
-cTypesU=(A_mult_small_100 A_mult_small_20 D_mult_mixed_20 D_mult_mixed_100)
+cTypesU=(MMD_1 MMD_2)
 
-for i in {0..3}
+for i in {0..1}
 do
     for j in {0..99}
     do
-        inFile=/home/jps/allocation_models/greedy_vs_exact/instances/vEta/cl${cTypesU[$i]}/inst_${j}.json
-        python3 /home/jps/allocation_models/greedy_vs_exact/algorithms/multipleKS/greedyMMD-4edge.py ${inFile} > /home/jps/allocation_models/greedy_vs_exact/results/vEta/greedyMMD/cl${cTypesU[$i]}/inst_${j}.txt
+        inFile=/home/jps/allocation_models/greedy_vs_exact/instances/vTheta/${cTypesU[$i]}/inst_${j}.json
+        python3 /home/jps/allocation_models/greedy_vs_exact/algorithms/multipleKS/greedyMMD-4edge.py ${inFile} > /home/jps/allocation_models/greedy_vs_exact/results/vTheta/greedyMMD/${cTypesU[$i]}/inst_${j}.txt
     done
 done

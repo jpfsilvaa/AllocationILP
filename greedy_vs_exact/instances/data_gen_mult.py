@@ -79,7 +79,7 @@ def cloudletGen(cloudletQtt):
             })
 
     for m in range(6, 8):
-        Cloudlets.append({ "id": "cE_{m}",
+        Cloudlets.append({ "id": f"cE_{m}",
                 "c_storage": 4 * 1000 * 1024, 
                 "c_CPU": 60 * simMIPS,
                 "c_RAM": 512 * 1024
