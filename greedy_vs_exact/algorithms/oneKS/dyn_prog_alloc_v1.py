@@ -50,11 +50,11 @@ def dynProgAlloc(cloudlet, userVms):
     
     #preparing data for the pricing algorithm
     normalWinners = utils.normalize(cloudlet, S)
-    utils.calcDensities(normalWinners) # this function update the maxCoord value of eah user
+    utils.calcDensitiesByMax(normalWinners) # this function update the maxCoord value of eah user
 
     del userVms[0]
     normalVms = utils.normalize(cloudlet, userVms)
-    D = utils.calcDensities(normalVms)
+    D = utils.calcDensitiesByMax(normalVms)
     D.sort(key=lambda a: a[1], reverse=True)
 
     return [socialWelfare, normalWinners, D]

@@ -1,4 +1,5 @@
 import json, math
+import copy
 
 class Resources:
     def __init__(self, cpu, ram, storage):
@@ -14,6 +15,7 @@ class UserVM:
         self.price = 0
         self.maxReq = 0
         self.reqs = reqs
+        self.reqsSum = 0
 
 class Cloudlet:
     def __init__(self, id, resources):
@@ -24,13 +26,13 @@ def normalize(cloudlet, vms):
     normalized = []
     for v in vms:
         normalized.append(UserVM(v.id, v.vmType, v.bid, Resources(
-            v.reqs.cpu/cloudlet.coords.cpu,
-            v.reqs.ram/cloudlet.coords.ram,
-            v.reqs.storage/cloudlet.coords.storage
+            v.reqs.cpu/cloudlet.resources.cpu,
+            v.reqs.ram/cloudlet.resources.ram,
+            v.reqs.storage/cloudlet.resources.storage
         )))
     return normalized
 
-def calcDensities(vms):
+def calcDensitiesByMax(vms):
     dens = []
     for v in vms:
         v.maxReq = max(v.reqs.cpu, v.reqs.ram, v.reqs.storage)
@@ -38,15 +40,28 @@ def calcDensities(vms):
     
     return dens
 
+def calcDensitiesBySum(vms):
+    dens = []
+    for v in vms:
+        v.reqsSum = (v.reqs.cpu + v.reqs.ram + v.reqs.storage)
+        dens.append((v, v.bid/v.reqsSum))
+    
+    return dens
+
+def sortCloudletsByType(cloudlets):
+    sortedCloudlets = copy.deepcopy(cloudlets)
+    sortedCloudlets.sort(key=lambda x: x.id[0:3], reverse=True)
+    return sortedCloudlets
+
 def userFits(user, occupation):
     return (user.reqs.cpu + occupation.cpu <= 1
             and user.reqs.ram + occupation.ram <= 1 
             and user.reqs.storage + occupation.storage <= 1)
 
 def allocate(user, occupation):
-    occupation.cpu += user.coords.cpu
-    occupation.ram += user.coords.ram
-    occupation.storage += user.coords.storage
+    occupation.cpu += user.reqs.cpu
+    occupation.ram += user.reqs.ram
+    occupation.storage += user.reqs.storage
 
 def isNotFull(occupation):
     return (occupation.cpu <= 1 and occupation.ram <= 1 

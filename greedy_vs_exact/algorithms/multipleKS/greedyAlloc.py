@@ -3,32 +3,38 @@ import time
 import sys
 import alloc_utils as utils
 
-def greedyAlloc(cloudlet, vms):
-    normalVms = utils.normalize(cloudlet, vms)
-    D = utils.calcDensities(normalVms)
+def greedyAlloc(cloudlets, vms):
+    normalVms = utils.normalize(cloudlets[0], vms)
+    D = utils.calcDensitiesByMax(normalVms)
     D.sort(key=lambda a: a[1], reverse=True)
 
-    occupation = utils.Resources(0, 0, 0)
     allocatedUsers = []
     socialWelfare = 0
-    userPointer = 0
+    cloudletPointer = 0
 
-    while (utils.isNotFull(occupation)) and userPointer < len(D):
-        chosenUser = D[userPointer][0]
-        if utils.userFits(chosenUser, occupation):
-            utils.allocate(chosenUser, occupation)
-            allocatedUsers.append(chosenUser)
-            socialWelfare += chosenUser.bid
-        userPointer += 1
+    while cloudletPointer < len(cloudlets):
+        userPointer = 0
+        occupation = utils.Resources(0, 0, 0)
+
+        while (utils.isNotFull(occupation)) and userPointer < len(D):
+            chosenUser = D[userPointer][0]
+            if utils.userFits(chosenUser, occupation):
+                utils.allocate(chosenUser, occupation)
+                allocatedUsers.append((chosenUser, cloudlets[cloudletPointer]))
+                socialWelfare += chosenUser.bid
+                del D[userPointer]
+            else:
+                userPointer += 1
+        cloudletPointer += 1
     
     print('num allocated users:', len(allocatedUsers))
-    print('allocated users:', [(user.id, user.vmType) for user in allocatedUsers])
+    print('allocated users:', [(allocTup[0].id, allocTup[0].vmType, allocTup[1].id) for allocTup in allocatedUsers])
     return [socialWelfare, allocatedUsers, D]
 
 def pricing(winners, densities):
     i = 0
     while i < len(winners):
-        occupation = utils.Resources(0, 0, 0)
+        occupation = utils.Resources(0, 0, 0) # for identical cloudlets, this is ok, but not for different cloudlets
         winner = winners[i]
         j = 0
         while utils.userFits(winner, occupation) and j < len(densities):
@@ -56,15 +62,15 @@ def printResults(winner, criticalValue):
 
 def main(jsonFilePath):
     data = utils.readJSONData(jsonFilePath)
-    cloudlet = utils.buildCloudlet(data['Cloudlets'])
+    cloudlets = utils.buildCloudlet(data['Cloudlets'])
     userVms = utils.buildUserVms(data['UserVMs'])
     startTime = time.time()
-    result = greedyAlloc(cloudlet, userVms)
+    result = greedyAlloc(cloudlets, userVms)
     endTime = time.time()
 
     print('social welfare:', result[0])
     print('execution time:', str(endTime-startTime).replace('.', ','))
-    print('\nprices (user: (bid, price)) : ', pricing(winners=result[1], densities=result[2]))
+    #  print('\nprices (user: (bid, price)) : ', pricing(winners=result[1], densities=result[2]))
 
 if __name__ == "__main__":
     inputFilePath = sys.argv[1:][0]

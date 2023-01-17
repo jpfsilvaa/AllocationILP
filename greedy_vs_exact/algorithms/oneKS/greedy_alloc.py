@@ -5,7 +5,7 @@ import alloc_utils as utils
 
 def greedyAlloc(cloudlet, vms):
     normalVms = utils.normalize(cloudlet, vms)
-    D = utils.calcDensities(normalVms)
+    D = utils.calcDensitiesByMax(normalVms)
     D.sort(key=lambda a: a[1], reverse=True)
 
     occupation = 0
