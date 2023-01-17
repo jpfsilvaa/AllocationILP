@@ -7,32 +7,42 @@ def vmGen(vmsQtt):
     VMs = []
     # units: storage(MB), cpu(MIPS), RAM(MB)
     simMIPS = 2000
-
-    chosenVMType = 0
-    for i in range(0, vmsQtt):
-        chosenVm = {}
-        if chosenVMType == 0:
-            chosenVm = {
+    for i in range(0, 50):
+        VMs.append({
                 "id": f'v{i}', 
                 "vmType": 'gp1',
-                "bid": int(random.gauss(100, 5)),
+                "bid": int(random.gauss(100, 10)),
                 "v_storage": 3 * 1024, 
                 "v_CPU": 2 * simMIPS, 
                 "v_RAM": 4 * 1024
-            }
-        elif chosenVMType == 1:
-            chosenVm = {  
-                "id": f'v{i}',  
+            })
+    for j in range(50, 100):
+        VMs.append({  
+                "id": f'v{j}',  
                 "vmType": 'gp2',
-                "bid": int(random.gauss(100, 5)),
+                "bid": int(random.gauss(100, 10)),
                 "v_storage": 16 * 1024, 
                 "v_CPU": 4 * simMIPS, 
                 "v_RAM": 16 * 1024
-            }
-        if chosenVMType == 1: chosenVMType = 0
-        else: chosenVMType = 1
-        VMs.append(chosenVm)
-    
+            })
+    for k in range(100, 150):
+        VMs.append({
+                "id": f'v{k}',
+                "vmType": 'ramInt',
+                "bid": int(random.gauss(100, 10)),
+                "v_storage": 16 * 1024, 
+                "v_CPU": 8 * simMIPS, 
+                "v_RAM": 64 * 1024
+            })
+    for l in range(150, 200):
+        VMs.append({
+                "id": f'v{l}', 
+                "vmType": 'cpuInt',
+                "bid": int(random.gauss(100, 10)),
+                "v_storage": 16 * 1024, 
+                "v_CPU": 16 * simMIPS, 
+                "v_RAM": 32 * 1024
+            })
     return VMs
 
 def cloudletGen(cloudletQtt):
@@ -40,37 +50,40 @@ def cloudletGen(cloudletQtt):
     simMIPS = 2000
     # units: storage(MB), cpu(MIPS), RAM(MB)
 
-    for i in range(cloudletQtt):
-        clA = { "id": f"cA_{i}",
+    for i in range(0, 2):
+        Cloudlets.append({ "id": f"cA_{i}",
             "c_storage": 250 * 1024, 
             "c_CPU": 12 * simMIPS,
             "c_RAM": 16 * 1024
-          }
-        Cloudlets.append(clA)
+            })
     
-    clB = { "id": "cB",
-            "c_storage": 500 * 1024, 
-            "c_CPU": 16 * simMIPS,
-            "c_RAM": 32 * 1024
-          }
+    for j in range(2, 4):
+        Cloudlets.append({ "id": f"cB_{j}",
+                "c_storage": 500 * 1024, 
+                "c_CPU": 16 * simMIPS,
+                "c_RAM": 32 * 1024
+            })
     
-    clC = { "id": "cC",
-            "c_storage": 1000 * 1024, 
-            "c_CPU": 22 * simMIPS,
-            "c_RAM": 64 * 1024
-          }
+    for k in range(4, 6):
+        Cloudlets.append({ "id": f"cC_{k}",
+                "c_storage": 1000 * 1024, 
+                "c_CPU": 22 * simMIPS,
+                "c_RAM": 64 * 1024
+            })
 
-    clD = { "id": f"cD",
-            "c_storage": 2 * 1000 * 1024, 
-            "c_CPU": 32 * simMIPS,
-            "c_RAM": 256 * 1024
-          }
+    for l in range(6, 8):
+        Cloudlets.append({ "id": f"cD_{l}",
+                "c_storage": 2 * 1000 * 1024, 
+                "c_CPU": 32 * simMIPS,
+                "c_RAM": 256 * 1024
+            })
 
-    clE = { "id": "cE",
-            "c_storage": 4 * 1000 * 1024, 
-            "c_CPU": 60 * simMIPS,
-            "c_RAM": 512 * 1024
-          }
+    for m in range(6, 8):
+        Cloudlets.append({ "id": "cE_{m}",
+                "c_storage": 4 * 1000 * 1024, 
+                "c_CPU": 60 * simMIPS,
+                "c_RAM": 512 * 1024
+            })
 
     return Cloudlets
 
