@@ -4,7 +4,8 @@ import sys
 import alloc_utils as utils
 
 def greedyAlloc(cloudlets, vms):
-    normalVms = utils.normalize(cloudlets[0], vms)
+    sortedCloudlets = utils.sortCloudletsByType(cloudlets)
+    normalVms = utils.normalize(sortedCloudlets[0], vms)
     D = utils.calcDensitiesByMax(normalVms)
     D.sort(key=lambda a: a[1], reverse=True)
 
@@ -12,7 +13,7 @@ def greedyAlloc(cloudlets, vms):
     socialWelfare = 0
     cloudletPointer = 0
 
-    while cloudletPointer < len(cloudlets):
+    while cloudletPointer < len(sortedCloudlets):
         userPointer = 0
         occupation = utils.Resources(0, 0, 0)
 
@@ -20,7 +21,7 @@ def greedyAlloc(cloudlets, vms):
             chosenUser = D[userPointer][0]
             if utils.userFits(chosenUser, occupation):
                 utils.allocate(chosenUser, occupation)
-                allocatedUsers.append((chosenUser, cloudlets[cloudletPointer]))
+                allocatedUsers.append((chosenUser, sortedCloudlets[cloudletPointer]))
                 socialWelfare += chosenUser.bid
                 del D[userPointer]
             else:

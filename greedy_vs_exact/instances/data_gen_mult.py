@@ -29,7 +29,7 @@ def vmGen(vmsQtt):
         VMs.append({
                 "id": f'v{k}',
                 "vmType": 'ramInt',
-                "bid": int(random.gauss(100, 10)),
+                "bid": int(random.gauss(150, 10)),
                 "v_storage": 16 * 1024, 
                 "v_CPU": 8 * simMIPS, 
                 "v_RAM": 64 * 1024
@@ -38,7 +38,7 @@ def vmGen(vmsQtt):
         VMs.append({
                 "id": f'v{l}', 
                 "vmType": 'cpuInt',
-                "bid": int(random.gauss(100, 10)),
+                "bid": int(random.gauss(150, 10)),
                 "v_storage": 16 * 1024, 
                 "v_CPU": 16 * simMIPS, 
                 "v_RAM": 32 * 1024

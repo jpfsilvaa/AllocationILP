@@ -50,7 +50,7 @@ def calcDensitiesBySum(vms):
 
 def sortCloudletsByType(cloudlets):
     sortedCloudlets = copy.deepcopy(cloudlets)
-    sortedCloudlets.sort(key=lambda x: x.id[0:3], reverse=True)
+    sortedCloudlets.sort(key=lambda x: x.id, reverse=True)
     return sortedCloudlets
 
 def userFits(user, occupation):
