@@ -1,0 +1,866 @@
+{
+    "UserVMs": [
+        {
+            "id": "v0",
+            "vmType": "gp1",
+            "bid": 106,
+            "v_storage": 3030,
+            "v_CPU": 4170,
+            "v_RAM": 3755
+        },
+        {
+            "id": "v1",
+            "vmType": "gp1",
+            "bid": 77,
+            "v_storage": 2932,
+            "v_CPU": 4229,
+            "v_RAM": 4019
+        },
+        {
+            "id": "v2",
+            "vmType": "gp1",
+            "bid": 106,
+            "v_storage": 2941,
+            "v_CPU": 4869,
+            "v_RAM": 4610
+        },
+        {
+            "id": "v3",
+            "vmType": "gp1",
+            "bid": 110,
+            "v_storage": 3163,
+            "v_CPU": 4420,
+            "v_RAM": 4094
+        },
+        {
+            "id": "v4",
+            "vmType": "gp1",
+            "bid": 80,
+            "v_storage": 2358,
+            "v_CPU": 4229,
+            "v_RAM": 4575
+        },
+        {
+            "id": "v5",
+            "vmType": "gp1",
+            "bid": 98,
+            "v_storage": 3315,
+            "v_CPU": 4590,
+            "v_RAM": 3691
+        },
+        {
+            "id": "v6",
+            "vmType": "gp1",
+            "bid": 108,
+            "v_storage": 2700,
+            "v_CPU": 4122,
+            "v_RAM": 3370
+        },
+        {
+            "id": "v7",
+            "vmType": "gp1",
+            "bid": 101,
+            "v_storage": 3583,
+            "v_CPU": 4151,
+            "v_RAM": 3737
+        },
+        {
+            "id": "v8",
+            "vmType": "gp1",
+            "bid": 99,
+            "v_storage": 2715,
+            "v_CPU": 3993,
+            "v_RAM": 4391
+        },
+        {
+            "id": "v9",
+            "vmType": "gp1",
+            "bid": 103,
+            "v_storage": 2991,
+            "v_CPU": 4136,
+            "v_RAM": 4563
+        },
+        {
+            "id": "v10",
+            "vmType": "gp1",
+            "bid": 96,
+            "v_storage": 2878,
+            "v_CPU": 4161,
+            "v_RAM": 3666
+        },
+        {
+            "id": "v11",
+            "vmType": "gp1",
+            "bid": 87,
+            "v_storage": 3259,
+            "v_CPU": 3723,
+            "v_RAM": 4493
+        },
+        {
+            "id": "v12",
+            "vmType": "gp1",
+            "bid": 101,
+            "v_storage": 3372,
+            "v_CPU": 4071,
+            "v_RAM": 4443
+        },
+        {
+            "id": "v13",
+            "vmType": "gp1",
+            "bid": 97,
+            "v_storage": 2823,
+            "v_CPU": 4152,
+            "v_RAM": 4229
+        },
+        {
+            "id": "v14",
+            "vmType": "gp1",
+            "bid": 80,
+            "v_storage": 2439,
+            "v_CPU": 4725,
+            "v_RAM": 4198
+        },
+        {
+            "id": "v15",
+            "vmType": "gp1",
+            "bid": 100,
+            "v_storage": 3077,
+            "v_CPU": 4068,
+            "v_RAM": 3622
+        },
+        {
+            "id": "v16",
+            "vmType": "gp1",
+            "bid": 92,
+            "v_storage": 3356,
+            "v_CPU": 4241,
+            "v_RAM": 3699
+        },
+        {
+            "id": "v17",
+            "vmType": "gp1",
+            "bid": 109,
+            "v_storage": 2470,
+            "v_CPU": 3391,
+            "v_RAM": 4669
+        },
+        {
+            "id": "v18",
+            "vmType": "gp1",
+            "bid": 103,
+            "v_storage": 3199,
+            "v_CPU": 4080,
+            "v_RAM": 4440
+        },
+        {
+            "id": "v19",
+            "vmType": "gp1",
+            "bid": 106,
+            "v_storage": 2860,
+            "v_CPU": 4503,
+            "v_RAM": 3856
+        },
+        {
+            "id": "v20",
+            "vmType": "gp1",
+            "bid": 92,
+            "v_storage": 3105,
+            "v_CPU": 4115,
+            "v_RAM": 4033
+        },
+        {
+            "id": "v21",
+            "vmType": "gp1",
+            "bid": 91,
+            "v_storage": 3042,
+            "v_CPU": 4417,
+            "v_RAM": 4238
+        },
+        {
+            "id": "v22",
+            "vmType": "gp1",
+            "bid": 99,
+            "v_storage": 3063,
+            "v_CPU": 4118,
+            "v_RAM": 4049
+        },
+        {
+            "id": "v23",
+            "vmType": "gp1",
+            "bid": 80,
+            "v_storage": 2906,
+            "v_CPU": 4829,
+            "v_RAM": 4088
+        },
+        {
+            "id": "v24",
+            "vmType": "gp1",
+            "bid": 114,
+            "v_storage": 2916,
+            "v_CPU": 4264,
+            "v_RAM": 4030
+        },
+        {
+            "id": "v25",
+            "vmType": "gp2",
+            "bid": 108,
+            "v_storage": 15384,
+            "v_CPU": 8182,
+            "v_RAM": 15404
+        },
+        {
+            "id": "v26",
+            "vmType": "gp2",
+            "bid": 90,
+            "v_storage": 15198,
+            "v_CPU": 8780,
+            "v_RAM": 17724
+        },
+        {
+            "id": "v27",
+            "vmType": "gp2",
+            "bid": 110,
+            "v_storage": 17310,
+            "v_CPU": 7310,
+            "v_RAM": 16687
+        },
+        {
+            "id": "v28",
+            "vmType": "gp2",
+            "bid": 93,
+            "v_storage": 14732,
+            "v_CPU": 7204,
+            "v_RAM": 16985
+        },
+        {
+            "id": "v29",
+            "vmType": "gp2",
+            "bid": 109,
+            "v_storage": 12591,
+            "v_CPU": 9052,
+            "v_RAM": 14793
+        },
+        {
+            "id": "v30",
+            "vmType": "gp2",
+            "bid": 75,
+            "v_storage": 14000,
+            "v_CPU": 9739,
+            "v_RAM": 15462
+        },
+        {
+            "id": "v31",
+            "vmType": "gp2",
+            "bid": 85,
+            "v_storage": 16766,
+            "v_CPU": 8881,
+            "v_RAM": 15343
+        },
+        {
+            "id": "v32",
+            "vmType": "gp2",
+            "bid": 93,
+            "v_storage": 14974,
+            "v_CPU": 7063,
+            "v_RAM": 17000
+        },
+        {
+            "id": "v33",
+            "vmType": "gp2",
+            "bid": 94,
+            "v_storage": 14352,
+            "v_CPU": 8997,
+            "v_RAM": 18981
+        },
+        {
+            "id": "v34",
+            "vmType": "gp2",
+            "bid": 101,
+            "v_storage": 15345,
+            "v_CPU": 8130,
+            "v_RAM": 13361
+        },
+        {
+            "id": "v35",
+            "vmType": "gp2",
+            "bid": 87,
+            "v_storage": 12834,
+            "v_CPU": 8939,
+            "v_RAM": 17774
+        },
+        {
+            "id": "v36",
+            "vmType": "gp2",
+            "bid": 112,
+            "v_storage": 14274,
+            "v_CPU": 7929,
+            "v_RAM": 15864
+        },
+        {
+            "id": "v37",
+            "vmType": "gp2",
+            "bid": 97,
+            "v_storage": 14710,
+            "v_CPU": 7907,
+            "v_RAM": 17759
+        },
+        {
+            "id": "v38",
+            "vmType": "gp2",
+            "bid": 90,
+            "v_storage": 18460,
+            "v_CPU": 7821,
+            "v_RAM": 16590
+        },
+        {
+            "id": "v39",
+            "vmType": "gp2",
+            "bid": 111,
+            "v_storage": 11729,
+            "v_CPU": 8972,
+            "v_RAM": 16123
+        },
+        {
+            "id": "v40",
+            "vmType": "gp2",
+            "bid": 103,
+            "v_storage": 17541,
+            "v_CPU": 7759,
+            "v_RAM": 16203
+        },
+        {
+            "id": "v41",
+            "vmType": "gp2",
+            "bid": 96,
+            "v_storage": 15741,
+            "v_CPU": 7509,
+            "v_RAM": 13759
+        },
+        {
+            "id": "v42",
+            "vmType": "gp2",
+            "bid": 92,
+            "v_storage": 16361,
+            "v_CPU": 8268,
+            "v_RAM": 17372
+        },
+        {
+            "id": "v43",
+            "vmType": "gp2",
+            "bid": 107,
+            "v_storage": 18859,
+            "v_CPU": 8814,
+            "v_RAM": 18327
+        },
+        {
+            "id": "v44",
+            "vmType": "gp2",
+            "bid": 108,
+            "v_storage": 16191,
+            "v_CPU": 6699,
+            "v_RAM": 16614
+        },
+        {
+            "id": "v45",
+            "vmType": "gp2",
+            "bid": 96,
+            "v_storage": 17266,
+            "v_CPU": 8327,
+            "v_RAM": 19007
+        },
+        {
+            "id": "v46",
+            "vmType": "gp2",
+            "bid": 83,
+            "v_storage": 18667,
+            "v_CPU": 8652,
+            "v_RAM": 13852
+        },
+        {
+            "id": "v47",
+            "vmType": "gp2",
+            "bid": 111,
+            "v_storage": 16799,
+            "v_CPU": 9440,
+            "v_RAM": 17963
+        },
+        {
+            "id": "v48",
+            "vmType": "gp2",
+            "bid": 101,
+            "v_storage": 18833,
+            "v_CPU": 8715,
+            "v_RAM": 15656
+        },
+        {
+            "id": "v49",
+            "vmType": "gp2",
+            "bid": 98,
+            "v_storage": 17250,
+            "v_CPU": 9871,
+            "v_RAM": 15519
+        },
+        {
+            "id": "v50",
+            "vmType": "ramInt",
+            "bid": 149,
+            "v_storage": 15546,
+            "v_CPU": 15829,
+            "v_RAM": 57505
+        },
+        {
+            "id": "v51",
+            "vmType": "ramInt",
+            "bid": 154,
+            "v_storage": 17790,
+            "v_CPU": 15188,
+            "v_RAM": 64313
+        },
+        {
+            "id": "v52",
+            "vmType": "ramInt",
+            "bid": 144,
+            "v_storage": 15549,
+            "v_CPU": 16900,
+            "v_RAM": 69751
+        },
+        {
+            "id": "v53",
+            "vmType": "ramInt",
+            "bid": 161,
+            "v_storage": 14402,
+            "v_CPU": 16467,
+            "v_RAM": 72349
+        },
+        {
+            "id": "v54",
+            "vmType": "ramInt",
+            "bid": 142,
+            "v_storage": 16057,
+            "v_CPU": 14978,
+            "v_RAM": 62243
+        },
+        {
+            "id": "v55",
+            "vmType": "ramInt",
+            "bid": 153,
+            "v_storage": 19709,
+            "v_CPU": 16949,
+            "v_RAM": 67704
+        },
+        {
+            "id": "v56",
+            "vmType": "ramInt",
+            "bid": 156,
+            "v_storage": 14415,
+            "v_CPU": 16314,
+            "v_RAM": 70848
+        },
+        {
+            "id": "v57",
+            "vmType": "ramInt",
+            "bid": 153,
+            "v_storage": 17826,
+            "v_CPU": 14353,
+            "v_RAM": 65954
+        },
+        {
+            "id": "v58",
+            "vmType": "ramInt",
+            "bid": 152,
+            "v_storage": 17584,
+            "v_CPU": 16279,
+            "v_RAM": 62487
+        },
+        {
+            "id": "v59",
+            "vmType": "ramInt",
+            "bid": 147,
+            "v_storage": 19327,
+            "v_CPU": 14580,
+            "v_RAM": 72045
+        },
+        {
+            "id": "v60",
+            "vmType": "ramInt",
+            "bid": 165,
+            "v_storage": 14435,
+            "v_CPU": 16437,
+            "v_RAM": 73853
+        },
+        {
+            "id": "v61",
+            "vmType": "ramInt",
+            "bid": 149,
+            "v_storage": 17234,
+            "v_CPU": 16486,
+            "v_RAM": 67198
+        },
+        {
+            "id": "v62",
+            "vmType": "ramInt",
+            "bid": 154,
+            "v_storage": 14098,
+            "v_CPU": 16271,
+            "v_RAM": 63208
+        },
+        {
+            "id": "v63",
+            "vmType": "ramInt",
+            "bid": 153,
+            "v_storage": 17016,
+            "v_CPU": 16815,
+            "v_RAM": 73195
+        },
+        {
+            "id": "v64",
+            "vmType": "ramInt",
+            "bid": 141,
+            "v_storage": 15814,
+            "v_CPU": 14400,
+            "v_RAM": 73665
+        },
+        {
+            "id": "v65",
+            "vmType": "ramInt",
+            "bid": 150,
+            "v_storage": 18396,
+            "v_CPU": 15902,
+            "v_RAM": 72102
+        },
+        {
+            "id": "v66",
+            "vmType": "ramInt",
+            "bid": 174,
+            "v_storage": 17634,
+            "v_CPU": 14882,
+            "v_RAM": 58629
+        },
+        {
+            "id": "v67",
+            "vmType": "ramInt",
+            "bid": 141,
+            "v_storage": 16998,
+            "v_CPU": 15875,
+            "v_RAM": 62827
+        },
+        {
+            "id": "v68",
+            "vmType": "ramInt",
+            "bid": 148,
+            "v_storage": 20413,
+            "v_CPU": 16331,
+            "v_RAM": 79264
+        },
+        {
+            "id": "v69",
+            "vmType": "ramInt",
+            "bid": 159,
+            "v_storage": 18804,
+            "v_CPU": 14739,
+            "v_RAM": 63413
+        },
+        {
+            "id": "v70",
+            "vmType": "ramInt",
+            "bid": 168,
+            "v_storage": 15683,
+            "v_CPU": 16006,
+            "v_RAM": 61459
+        },
+        {
+            "id": "v71",
+            "vmType": "ramInt",
+            "bid": 161,
+            "v_storage": 18151,
+            "v_CPU": 15399,
+            "v_RAM": 68599
+        },
+        {
+            "id": "v72",
+            "vmType": "ramInt",
+            "bid": 142,
+            "v_storage": 18755,
+            "v_CPU": 15795,
+            "v_RAM": 67385
+        },
+        {
+            "id": "v73",
+            "vmType": "ramInt",
+            "bid": 142,
+            "v_storage": 17772,
+            "v_CPU": 14614,
+            "v_RAM": 75860
+        },
+        {
+            "id": "v74",
+            "vmType": "ramInt",
+            "bid": 128,
+            "v_storage": 18079,
+            "v_CPU": 17451,
+            "v_RAM": 71046
+        },
+        {
+            "id": "v75",
+            "vmType": "cpuInt",
+            "bid": 146,
+            "v_storage": 17581,
+            "v_CPU": 35205,
+            "v_RAM": 36035
+        },
+        {
+            "id": "v76",
+            "vmType": "cpuInt",
+            "bid": 161,
+            "v_storage": 15996,
+            "v_CPU": 32257,
+            "v_RAM": 36623
+        },
+        {
+            "id": "v77",
+            "vmType": "cpuInt",
+            "bid": 157,
+            "v_storage": 15887,
+            "v_CPU": 32618,
+            "v_RAM": 31547
+        },
+        {
+            "id": "v78",
+            "vmType": "cpuInt",
+            "bid": 136,
+            "v_storage": 14778,
+            "v_CPU": 30255,
+            "v_RAM": 31729
+        },
+        {
+            "id": "v79",
+            "vmType": "cpuInt",
+            "bid": 147,
+            "v_storage": 18543,
+            "v_CPU": 31734,
+            "v_RAM": 31695
+        },
+        {
+            "id": "v80",
+            "vmType": "cpuInt",
+            "bid": 152,
+            "v_storage": 17838,
+            "v_CPU": 35706,
+            "v_RAM": 32404
+        },
+        {
+            "id": "v81",
+            "vmType": "cpuInt",
+            "bid": 164,
+            "v_storage": 16023,
+            "v_CPU": 33785,
+            "v_RAM": 36752
+        },
+        {
+            "id": "v82",
+            "vmType": "cpuInt",
+            "bid": 155,
+            "v_storage": 15630,
+            "v_CPU": 31613,
+            "v_RAM": 34639
+        },
+        {
+            "id": "v83",
+            "vmType": "cpuInt",
+            "bid": 154,
+            "v_storage": 17937,
+            "v_CPU": 33847,
+            "v_RAM": 35302
+        },
+        {
+            "id": "v84",
+            "vmType": "cpuInt",
+            "bid": 157,
+            "v_storage": 17924,
+            "v_CPU": 31685,
+            "v_RAM": 38082
+        },
+        {
+            "id": "v85",
+            "vmType": "cpuInt",
+            "bid": 138,
+            "v_storage": 20682,
+            "v_CPU": 28410,
+            "v_RAM": 31245
+        },
+        {
+            "id": "v86",
+            "vmType": "cpuInt",
+            "bid": 146,
+            "v_storage": 17226,
+            "v_CPU": 32088,
+            "v_RAM": 35895
+        },
+        {
+            "id": "v87",
+            "vmType": "cpuInt",
+            "bid": 166,
+            "v_storage": 17391,
+            "v_CPU": 29501,
+            "v_RAM": 33989
+        },
+        {
+            "id": "v88",
+            "vmType": "cpuInt",
+            "bid": 161,
+            "v_storage": 16905,
+            "v_CPU": 30095,
+            "v_RAM": 36753
+        },
+        {
+            "id": "v89",
+            "vmType": "cpuInt",
+            "bid": 133,
+            "v_storage": 14924,
+            "v_CPU": 36134,
+            "v_RAM": 33540
+        },
+        {
+            "id": "v90",
+            "vmType": "cpuInt",
+            "bid": 129,
+            "v_storage": 16386,
+            "v_CPU": 28825,
+            "v_RAM": 34216
+        },
+        {
+            "id": "v91",
+            "vmType": "cpuInt",
+            "bid": 137,
+            "v_storage": 14348,
+            "v_CPU": 30871,
+            "v_RAM": 35747
+        },
+        {
+            "id": "v92",
+            "vmType": "cpuInt",
+            "bid": 151,
+            "v_storage": 15277,
+            "v_CPU": 32687,
+            "v_RAM": 28707
+        },
+        {
+            "id": "v93",
+            "vmType": "cpuInt",
+            "bid": 155,
+            "v_storage": 16630,
+            "v_CPU": 28990,
+            "v_RAM": 31704
+        },
+        {
+            "id": "v94",
+            "vmType": "cpuInt",
+            "bid": 151,
+            "v_storage": 16166,
+            "v_CPU": 28106,
+            "v_RAM": 35626
+        },
+        {
+            "id": "v95",
+            "vmType": "cpuInt",
+            "bid": 136,
+            "v_storage": 18657,
+            "v_CPU": 31605,
+            "v_RAM": 36193
+        },
+        {
+            "id": "v96",
+            "vmType": "cpuInt",
+            "bid": 157,
+            "v_storage": 16074,
+            "v_CPU": 35132,
+            "v_RAM": 34629
+        },
+        {
+            "id": "v97",
+            "vmType": "cpuInt",
+            "bid": 151,
+            "v_storage": 16087,
+            "v_CPU": 32878,
+            "v_RAM": 33142
+        },
+        {
+            "id": "v98",
+            "vmType": "cpuInt",
+            "bid": 164,
+            "v_storage": 17289,
+            "v_CPU": 31097,
+            "v_RAM": 32476
+        },
+        {
+            "id": "v99",
+            "vmType": "cpuInt",
+            "bid": 151,
+            "v_storage": 17725,
+            "v_CPU": 38148,
+            "v_RAM": 34787
+        }
+    ],
+    "Cloudlets": [
+        {
+            "id": "cE_0",
+            "c_storage": 8192000,
+            "c_CPU": 240000,
+            "c_RAM": 1048576
+        },
+        {
+            "id": "cE_1",
+            "c_storage": 8192000,
+            "c_CPU": 240000,
+            "c_RAM": 1048576
+        },
+        {
+            "id": "cE_2",
+            "c_storage": 8192000,
+            "c_CPU": 240000,
+            "c_RAM": 1048576
+        },
+        {
+            "id": "cE_3",
+            "c_storage": 8192000,
+            "c_CPU": 240000,
+            "c_RAM": 1048576
+        },
+        {
+            "id": "cE_4",
+            "c_storage": 8192000,
+            "c_CPU": 240000,
+            "c_RAM": 1048576
+        },
+        {
+            "id": "cE_5",
+            "c_storage": 8192000,
+            "c_CPU": 240000,
+            "c_RAM": 1048576
+        },
+        {
+            "id": "cE_6",
+            "c_storage": 8192000,
+            "c_CPU": 240000,
+            "c_RAM": 1048576
+        },
+        {
+            "id": "cE_7",
+            "c_storage": 8192000,
+            "c_CPU": 240000,
+            "c_RAM": 1048576
+        },
+        {
+            "id": "cE_8",
+            "c_storage": 8192000,
+            "c_CPU": 240000,
+            "c_RAM": 1048576
+        },
+        {
+            "id": "cE_9",
+            "c_storage": 8192000,
+            "c_CPU": 240000,
+            "c_RAM": 1048576
+        }
+    ]
+}
