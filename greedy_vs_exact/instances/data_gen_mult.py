@@ -7,41 +7,51 @@ def vmGen(vmsQtt):
     VMs = []
     # units: storage(MB), cpu(MIPS), RAM(MB)
     simMIPS = 2000
-    for i in range(0, 125):
+    for i in range(0, 100):
         VMs.append({
                 "id": f'v{i}', 
                 "vmType": 'gp1',
                 "bid": int(random.gauss(100, 10)),
-                "v_storage": int(random.gauss(3 * 1024, 300)), 
-                "v_CPU": int(random.gauss(2 * simMIPS, 400)), 
-                "v_RAM": int(random.gauss(4 * 1024, 400))
+                "v_storage": int(random.gauss(2 * 3 * 1024, 600)), 
+                "v_CPU": int(random.gauss(2 * 2 * simMIPS, 800)), 
+                "v_RAM": int(random.gauss(2 * 4 * 1024, 800))
             })
-    for j in range(125, 250):
+    for j in range(100,200):
         VMs.append({  
                 "id": f'v{j}',  
                 "vmType": 'gp2',
                 "bid": int(random.gauss(100, 10)),
-                "v_storage": int(random.gauss(16 * 1024, 1600)), 
-                "v_CPU": int(random.gauss(4 * simMIPS, 800)), 
-                "v_RAM": int(random.gauss(16 * 1024, 1600))
+                "v_storage": int(random.gauss(2 * 16 * 1024, 3200)), 
+                "v_CPU": int(random.gauss(2 * 4 * simMIPS, 1600)), 
+                "v_RAM": int(random.gauss(2 * 16 * 1024, 3200))
             })
-    for k in range(250, 375):
+    for k in range(200, 300):
         VMs.append({
                 "id": f'v{k}',
                 "vmType": 'ramInt',
                 "bid": int(random.gauss(150, 10)),
-                "v_storage": int(random.gauss(16 * 1024, 1600)), 
-                "v_CPU": int(random.gauss(8 * simMIPS, 800)), 
-                "v_RAM": int(random.gauss(64 * 1024, 6400))
+                "v_storage": int(random.gauss(2 * 16 * 1024, 3200)), 
+                "v_CPU": int(random.gauss(2 * 8 * simMIPS, 1600)), 
+                "v_RAM": int(random.gauss(2 * 64 * 1024, 12800))
             })
-    for l in range(375, 500):
+    for l in range(300, 400):
         VMs.append({
                 "id": f'v{l}', 
                 "vmType": 'cpuInt',
                 "bid": int(random.gauss(150, 10)),
-                "v_storage": int(random.gauss(16 * 1024, 1600)), 
-                "v_CPU": int(random.gauss(16 * simMIPS, 3200)), 
-                "v_RAM": int(random.gauss(32 * 1024, 3200))
+                "v_storage": int(random.gauss(2 * 16 * 1024, 3200)), 
+                "v_CPU": int(random.gauss(2 * 16 * simMIPS, 6400)), 
+                "v_RAM": int(random.gauss(2 * 32 * 1024, 6400))
+            })
+
+    for m in range(400, 500):
+        VMs.append({
+                "id": f'v{m}', 
+                "vmType": 'extra',
+                "bid": int(random.gauss(200, 10)),
+                "v_storage": int(random.gauss(4 * 16 * 1024, 3200)), 
+                "v_CPU": int(random.gauss(4 * 16 * simMIPS, 6400)), 
+                "v_RAM": int(random.gauss(4 * 64 * 1024, 12800))
             })
     return VMs
 
