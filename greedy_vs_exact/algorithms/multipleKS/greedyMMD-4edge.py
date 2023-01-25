@@ -4,7 +4,7 @@ import sys
 import alloc_utils as utils
 
 def greedyMMD(cloudlets, vms):
-    sortedCloudlets = utils.sortCloudletsByType(cloudlets)
+    sortedCloudlets = utils.sortCloudletsByType(cloudlets, True)
     normalVms = utils.normalize(sortedCloudlets[0], vms)
     D = utils.calcDensitiesBySum(normalVms)
     D.sort(key=lambda a: a[1], reverse=True)
